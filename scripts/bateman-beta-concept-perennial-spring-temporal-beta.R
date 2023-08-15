@@ -1,7 +1,7 @@
 # leave-one-out (jackknife) for temporal beta-diversity
 
 # get standardised data
-source('~/Dropbox/MoBD (Measurements of Beta diversity)/Beta_paper/bateman-beta-concept-perennial-spring-standardise-effort.R')
+source('./scripts/bateman-beta-concept-perennial-spring-standardise-effort.R')
 
 counter <- rip2 %>% 
   distinct(site_code, year)
@@ -296,3 +296,7 @@ temporal_beta_rarefaction <- temporal_gamma_ibr +
 panel_C <- cowplot::plot_grid(temporal_beta_rarefaction, 
                               temporal_beta_results,
                               nrow = 1, rel_widths = c(1, 0.5))
+
+panel_C
+ggsave('./figs/case-study-total-temporal-beta-results.pdf',
+       width = 150, height = 90, units = 'mm')

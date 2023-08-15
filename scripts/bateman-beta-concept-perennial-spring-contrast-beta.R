@@ -113,6 +113,12 @@ contr_beta_dat %>%
          fill = guide_legend(nrow = 1))
 
 
+panel_D
+ggsave('./figs/case-study-composition_diff_time_results.pdf',
+       width = 120, height = 90, units = 'mm')
+
+       
+
 top <- cowplot::plot_grid(panel_A, panel_B,
                    nrow = 1, labels = c("A", "B"))
                    
@@ -124,5 +130,6 @@ bottom <- cowplot::plot_grid(panel_C, panel_D,
 cowplot::plot_grid(top, bottom,
                    nrow = 2)
 
-ggsave('~/Dropbox/MoBD (Measurements of Beta diversity)/Beta_paper/figs/case-study-results.pdf',
-       width = 270, height = 180, units = 'mm')
+ggsave('./figs/case-study-results.pdf', width = 270, height = 180, units = 'mm')
+
+

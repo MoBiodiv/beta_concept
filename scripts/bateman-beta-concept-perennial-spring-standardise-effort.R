@@ -5,7 +5,7 @@ library(tidyverse)
 
 # downloaded 3rd Oct 2022   
 
-dat <- read_csv('~/Dropbox/MoBD (Measurements of Beta diversity)/Beta_paper/data/knb-lter-cap.46.15/46_core_birds_ee23527b9fad8b2ead1a6f0b4471ab1e.csv')
+dat <- read_csv('./data/46_core_birds_ee23527b9fad8b2ead1a6f0b4471ab1e.csv')
 
 
 # separate date in year, month, day

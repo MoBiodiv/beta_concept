@@ -1,4 +1,4 @@
-source('~/Dropbox/MoBD (Measurements of Beta diversity)/Beta_paper/bateman-beta-concept-perennial-spring-standardise-effort.R')
+source('./scripts/bateman-beta-concept-perennial-spring-standardise-effort.R')
 
 # first total spatiotemporal variation in community composition
 # gamma-scale is all years and sites combined; alpha is a single site-year
@@ -148,8 +148,6 @@ ggplot() +
   guides(colour = guide_legend(reverse = TRUE, title = NULL),
          shape = guide_legend(reverse = TRUE, title = NULL))
 
-# ggsave('~/Dropbox/MoBD (Measurements of Beta diversity)/Beta_paper/figs/case-study-total-spatiotemporal-results.pdf',
-       # width = 100, height = 90, units = 'mm')
 
 # and the rarefaction visualisation of total spatiotemporal
 # ibr: gamma-space-time
@@ -258,4 +256,6 @@ panel_A <- cowplot::plot_grid(rarefaction_curves, results_plot,
                    nrow = 1,
                    rel_widths = c(1, 0.5), 
                    align = 'hv')
+ggsave('./figs/case-study-total-spatiotemporal-results.pdf',
+       width = 150, height = 90, units = 'mm')
 

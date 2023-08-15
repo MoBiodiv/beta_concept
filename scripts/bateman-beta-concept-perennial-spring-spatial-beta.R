@@ -1,7 +1,7 @@
 ## temporal variation in spatial beta-diversity
 
 # get standardised data
-source('~/Dropbox/MoBD (Measurements of Beta diversity)/Beta_paper/bateman-beta-concept-perennial-spring-standardise-effort.R')
+source('./scripts/bateman-beta-concept-perennial-spring-standardise-effort.R')
 
 spatial_beta_calcs <- rip2 %>% 
   unnest(data) %>% 
@@ -112,3 +112,6 @@ panel_B <- spatial_beta_dat %>%
          linetype = guide_legend(nrow = 2, title = NULL, reverse = TRUE),
          fill = guide_legend(nrow = 2, title = NULL, reverse = TRUE))
 
+panel_B
+ggsave('./figs/case-study-total-spatial-beta-results.pdf',
+       width = 150, height = 90, units = 'mm')

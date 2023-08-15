@@ -1,0 +1,1175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eml:eml packageId="knb-lter-cap.46.15" scope="system"
+  system="https://pasta.edirepository.org"
+  xmlns:eml="eml://ecoinformatics.org/eml-2.1.1"
+  xmlns:stmml="http://www.xml-cml.org/schema/stmml_1.1"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="eml://ecoinformatics.org/eml-2.1.1 http://nis.lternet.edu/schemas/EML/eml-2.1.1/eml.xsd">
+  <access authSystem="https://pasta.edirepository.org/authentication"
+    order="allowFirst" scope="document" system="https://pasta.edirepository.org">
+    <allow>
+      <principal>uid=CAP,o=LTER,dc=ecoinformatics,dc=org</principal>
+      <permission>all</permission>
+    </allow>
+    <allow>
+      <principal>public</principal>
+      <permission>read</permission>
+    </allow>
+  </access>
+  <dataset>
+    <alternateIdentifier system="https://doi.org">doi:10.6073/pasta/201add557165740926aab6e056db6988</alternateIdentifier>
+    <title>Point-count bird censusing: long-term monitoring of bird abundance and diversity in
+      central Arizona-Phoenix, ongoing since 2000</title>
+    <creator>
+      <individualName>
+        <givenName>Heather</givenName>
+        <surName>Bateman</surName>
+      </individualName>
+      <organizationName>Arizona State University, Polytechnic campus</organizationName>
+      <electronicMailAddress>heather.l.bateman@asu.edu</electronicMailAddress>
+    </creator>
+    <creator>
+      <individualName>
+        <givenName>Dan</givenName>
+        <surName>Childers</surName>
+      </individualName>
+      <organizationName>Arizona State University</organizationName>
+      <electronicMailAddress>dan.childers@asu.edu</electronicMailAddress>
+    </creator>
+    <creator>
+      <individualName>
+        <givenName>Madhusudan</givenName>
+        <surName>Katti</surName>
+      </individualName>
+      <organizationName>Department of Forestry and Environmental Resources</organizationName>
+      <electronicMailAddress>mkatti@ncsu.edu</electronicMailAddress>
+      <userId directory="orcid.org">http://orcid.org/0000-0003-3076-3562</userId>
+    </creator>
+    <creator>
+      <individualName>
+        <givenName>Eyal</givenName>
+        <surName>Shochat</surName>
+      </individualName>
+      <organizationName>Ben-Gurion University of the Negev</organizationName>
+      <electronicMailAddress>eyal.shochat@gmail.com</electronicMailAddress>
+    </creator>
+    <creator>
+      <individualName>
+        <givenName>Paige</givenName>
+        <surName>Warren</surName>
+      </individualName>
+      <organizationName>University of Massachusetts-Amherst</organizationName>
+      <electronicMailAddress>pswarren@eco.umass.edu</electronicMailAddress>
+    </creator>
+    <metadataProvider>
+      <individualName>
+        <givenName>Stevan</givenName>
+        <surName>Earl</surName>
+      </individualName>
+      <organizationName>Arizona State University</organizationName>
+      <electronicMailAddress>stevan.earl@asu.edu</electronicMailAddress>
+      <userId directory="orcid.org">http://orcid.org/0000-0002-4465-452X</userId>
+    </metadataProvider>
+    <pubDate>2017-11-21</pubDate>
+    <abstract>
+      <section>
+        <title>project overview</title>
+        <para> Over the past half-century, the greater Phoenix metropolitan area (GPMA) has been one
+          of the fastest growing regions in the US, experiencing rapid urban expansion in addition
+          to urban intensification. This backdrop provides an ideal setting to monitor biodiversity
+          changes in response to urbanization, and the CAP LTER has been using a standardized
+          point-count protocol to monitor the bird community in the GPMA and surrounding Sonoran
+          desert region since 2000. </para>
+        <para> The bird survey locations in this CAP LTER core monitoring program include six
+          general site groupings: </para>
+        <para>
+          <orderedlist>
+            <listitem>
+              <para> ESCA. Forty bird survey locations were selected from a subset of the CAP LTER's
+                Ecological Survey of Central Arizona (ESCA; formerly named Survey200) long-term
+                monitoring sites. ESCA sites were located using a tessellation-stratified
+                dual-density sampling design, and, as such, span a diversity of habitats including
+                urban, suburban, rural, commercial areas, parks, agricultural fields, and native
+                Sonoran desert. Earlier versions of this data package included data from the ESCA
+                project that was intended to complement the bird data. However, while positioned in
+                close proximity, the bird survey locations do not necessarily overlap with the 30m x
+                30m plot that constitutes an ESCA sampling location, and leveraging data from these
+                two monitoring programs should be addressed carefully. ESCA data have corresponding
+                survey location names, and those data are available through the CAP LTER and LTER
+                network data portals. At the conclusion of the 2016 spring survey, fifteen of the
+                ESCA-correlated sites were discontinued as the core monitoring program refocused its
+                efforts on desert parks and PASS neighborhoods. Among the deleted locations were all
+                agricultural and commercial sites, as well as sites where access had become
+                restrictive. </para>
+            </listitem>
+            <listitem>
+              <para> North Desert Village (NDV). Additional bird survey locations were positioned in
+                treatment areas of the North Desert Village (NDV). This was a site of intense study
+                on the Arizona State University Polytechnic Campus in which the CAP LTER converted
+                the landscaping of small neighborhoods to reflect the dominant landscaping
+                preferences employed throughout the GPMA. NDV landscape types include: oasis
+                (NDV-O), xeric (NDV-X), mesic (NDV-M), control (NDV-C), and native (NDV-N).
+                Monitoring at NDV was discontinued after the spring 2016 season as research efforts
+                at this site came to an end. </para>
+            </listitem>
+            <listitem>
+              <para> Riparian. While the forty bird survey locations that were selected to coincide
+                with ESCA sampling locations span a wide diversity of habitats throughout the GPMA,
+                because of the generally random nature of selecting those sites, they did not
+                reflect riparian habitats. Riparian areas are important bird habitat but constitute
+                a very small area of the GPMA. To address this deficiency, bird survey locations
+                were established specifically in twelve riparian habitats. Riparian habitat
+                sub-types include: (1) ephemeral-engineered (EE, n=4), (2) ephemeral-natural (EN,
+                n=2), (3) perennial-engineered (PE, n=3), and (4) perennial-natural (PN, n=3). This
+                research was successfully concluded and these sites were discontinued after the
+                spring 2016 season. </para>
+            </listitem>
+            <listitem>
+              <para> Salt River. Seven study sites along the Salt River as it runs through the GPMA
+                that were selected as part of a related study (Salt River Biodiversity Project
+                (SRBP)) were ultimately included in the CAP LTER's core bird monitoring programs.
+                These sites reflect continued monitoring of riparian habitat. </para>
+            </listitem>
+            <listitem>
+              <para> Desert Fertilization. Beginning with the 2016-2017 winter survey, six sites at
+                desert parks were added to core monitoring to coincide with the CAP LTER Desert
+                Fertilization (DesFert) experiment sites. </para>
+            </listitem>
+            <listitem>
+              <para> PASS. Beginning with the 2016-2017 winter survey, what used to be a separate
+                bird-monitoring effort (monitoring in Phoenix Area Social Survey (PASS)
+                neighborhoods) was incorporated into this core bird-monitoring program. Eight points
+                were carried over from prior PASS monitoring, and 28 new points established,
+                resulting in three bird monitoring locations in each of the twelve PASS
+                neighborhoods. Visiting these locations each year, versus only in years surrounding
+                the PASS survey as done previously, provides more data on bird populations found in
+                the neighborhoods of the CAP LTER study area. </para>
+            </listitem>
+          </orderedlist>
+        </para>
+      </section>
+      <section>
+        <title>method overview</title>
+        <para> In a given season, each bird survey location is visited independently by three
+          birders who count all birds seen or heard within a 15-minute window. The frequency of
+          surveys has varied through the life of the project. The first year of the project (2000)
+          was generally a pilot year in which each site was visited approximately twice by a varying
+          number of birders. The monitoring became more formalized beginning in 2001, and each site
+          was visited in each of four seasons by three birders. The frequency of visits was reduced
+          to three seasons in 2005, and to two season (spring, winter) beginning in 2006. </para>
+      </section>
+    </abstract>
+    <keywordSet>
+      <keyword keywordType="theme">urban</keyword>
+      <keyword keywordType="theme">birds</keyword>
+      <keyword keywordType="theme">species abundance</keyword>
+      <keyword keywordType="theme">species composition</keyword>
+      <keyword keywordType="theme">communities</keyword>
+      <keyword keywordType="theme">community composition</keyword>
+      <keywordThesaurus>LTER controlled vocabulary</keywordThesaurus>
+    </keywordSet>
+    <keywordSet>
+      <keyword keywordType="theme">disturbance patterns</keyword>
+      <keyword keywordType="theme">population studies</keyword>
+      <keyword keywordType="theme">adapting to city life</keyword>
+      <keywordThesaurus>LTER core areas and CAP LTER IRTs</keywordThesaurus>
+    </keywordSet>
+    <keywordSet>
+      <keyword keywordType="theme">aves</keyword>
+      <keyword keywordType="theme">avifauna</keyword>
+      <keywordThesaurus>Creator Defined Keyword Set</keywordThesaurus>
+    </keywordSet>
+    <keywordSet>
+      <keyword keywordType="theme">cap lter</keyword>
+      <keyword keywordType="theme">cap</keyword>
+      <keyword keywordType="theme">caplter</keyword>
+      <keyword keywordType="theme">central arizona phoenix long term ecological research</keyword>
+      <keyword keywordType="place">arizona</keyword>
+      <keyword keywordType="place">az</keyword>
+      <keyword keywordType="theme">arid land</keyword>
+      <keywordThesaurus>CAPLTER Keyword Set List</keywordThesaurus>
+    </keywordSet>
+    <intellectualRights>Copyright Board of Regents, Arizona State University. This information is
+      released to the public and may be used for academic, educational, or commercial purposes
+      subject to the following restrictions. While the CAP LTER will make every effort possible to
+      control and document the quality of the data it publishes, the data are made available 'as
+      is'. The CAP LTER cannot assume responsibility for damages resulting from mis-use or
+      mis-interpretation of datasets, or from errors or omissions that may exist in the data. It is
+      considered a matter of professional ethics to acknowledge the work of other scientists that
+      has resulted in data used in subsequent research. The CAP LTER expects that any use of data
+      from this server will be accompanied with the appropriate citations and acknowledgments. The
+      CAP LTER encourages users to contact the original investigator responsible for the data that
+      they are accessing. Where appropriate, researchers whose projects are integrally dependent on
+      CAP LTER data are encouraged to consider collaboration and/or co-authorship with original
+      investigators. The CAP LTER requests that users submit to the Julie Ann Wrigley Global
+      Institute of Sustainability at Arizona State University reference to any publication(s)
+      resulting from the use of data obtained from this site. The CAP LTER requests that users not
+      redistribute data obtained from this site. However, links or references to this site may be
+      freely posted.</intellectualRights>
+    <distribution>
+      <online>
+        <onlineDescription>CAPLTER Metadata URL</onlineDescription>
+        <url>https://sustainability.asu.edu/caplter/data/data-catalog/view/knb-lter-cap.46.14/xml/</url>
+      </online>
+    </distribution>
+    <coverage>
+      <geographicCoverage>
+        <geographicDescription>CAP LTER study area</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-112.742</westBoundingCoordinate>
+          <eastBoundingCoordinate>-111.622</eastBoundingCoordinate>
+          <northBoundingCoordinate>33.8814</northBoundingCoordinate>
+          <southBoundingCoordinate>33.2187</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <temporalCoverage>
+        <rangeOfDates>
+          <beginDate>
+            <calendarDate>2000-06-06</calendarDate>
+          </beginDate>
+          <endDate>
+            <calendarDate>2017-10-26</calendarDate>
+          </endDate>
+        </rangeOfDates>
+      </temporalCoverage>
+    </coverage>
+    <contact>
+      <organizationName>Julie Ann Wrigley Global Institute of Sustainability, Arizona State
+        University</organizationName>
+      <positionName>Data Manager</positionName>
+      <address>
+        <deliveryPoint>PO Box 875402</deliveryPoint>
+        <city>Tempe</city>
+        <administrativeArea>AZ</administrativeArea>
+        <postalCode>85287</postalCode>
+        <country>USA</country>
+      </address>
+      <electronicMailAddress>caplter.data@asu.edu</electronicMailAddress>
+    </contact>
+    <methods>
+      <methodStep>
+        <description>
+          <para> CAP LTER BIRDING POINT COUNT PROTOCOL Revised December 2014 </para>
+          <section>
+            <title>POINT COUNTS</title>
+            <para> A point count consists of one person standing in a specific location for a fixed
+              length of time at a specific time of day, and counting all birds seen and/or heard
+              within a specific distance ("Fixed Radius") or as far as the eye can see ("Open
+              Radius.") </para>
+            <para>
+              <itemizedlist>
+                <listitem>
+                  <para> CAP LTER uses 15-minute observation periods </para>
+                </listitem>
+                <listitem>
+                  <para> Counts are completed within 4 hours of local sunrise (see provided table
+                    for sunrise time) </para>
+                </listitem>
+                <listitem>
+                  <para> Counts are done using the "Open Radius" method </para>
+                </listitem>
+              </itemizedlist>
+            </para>
+          </section>
+          <section>
+            <title>ADDITIONAL OBSERVERS</title>
+            <para> The primary observer may be accompanied to the point by an additional observer.
+              However,only the observations of the primary observer should be recorded on the data
+              sheet. To avoid any bias that would invalidate the data collected, the secondary
+              observer should not verbalize, point out birds, or give any non-verbal cues to the
+              primary observer (e.g., looking at a bird with binoculars is a non-verbal cue). The
+              second observer should position itself in order to minimize disturbance to birds as
+              well as to the primary observer. Ideally, the second observer will stand near the
+              primary observer and slowly move around or bend down so that he/she does not obstruct
+              the primary observer views. </para>
+            <para>
+              <itemizedlist>
+                <listitem>
+                  <para> Please note in the "Site Condition" section of the datasheet if an
+                    additional observer was present during the count. </para>
+                </listitem>
+                <listitem>
+                  <para> If the secondary observer sees a species that the primary observer did not
+                    see, it may be noted in the "Notable additional bird species" section. </para>
+                </listitem>
+              </itemizedlist>
+            </para>
+          </section>
+          <section>
+            <title>COUNT CONDITIONS</title>
+            <para>
+              <itemizedlist>
+                <listitem>
+                  <para> The first point count should be started no earlier than local sunrise. The
+                    final point count should be finished no later than 4 hours past local sunrise.
+                  </para>
+                </listitem>
+                <listitem>
+                  <para> Do not conduct point counts in steady or heavy rain, though it is
+                    acceptable to conduct counts in light, intermittent drizzle (be sure to make
+                    note of this in the "Precipitation" section of the data sheet). </para>
+                </listitem>
+                <listitem>
+                  <para> Do not conduct point counts in steady winds above 20 mph (visual cue =
+                    branches of a moderate size move, small trees in leaves begin to sway). Make a
+                    note of the wind condition in the "Wind" section of the datasheet. </para>
+                </listitem>
+                <listitem>
+                  <para>In the "Disturbance" section, note if yes or no any type of disturbance
+                    occurred during the count, and describe the disturbance under the "Site
+                    Condition" section of the datasheet. A disturbance may involve disturbing you,
+                    the observer (e.g., a homeowner came and talked to you), or disturbing the birds
+                    (e.g., a cat chasing birds, garbage truck making lots of noise and flushing
+                    birds, predator flew by and flushed birds, etc.).</para>
+                </listitem>
+                <listitem>
+                  <para> If YOU, the observer, are being disturbed during the 15-minute count period
+                    for any reason, make a note of the interruption in the "Site Condition" section.
+                    Time should be paused for the duration of the interruption and resumed once the
+                    interruption event is terminated. Redo the count entirely if you are unsure of
+                    the time you were disrupted for. </para>
+                </listitem>
+                <listitem>
+                  <para> Make a note of the overall noise condition for the whole count period in
+                    the "Noise" section of the datasheet. </para>
+                </listitem>
+              </itemizedlist>
+            </para>
+          </section>
+          <section>
+            <title>APPROACHING THE POINT and FILLING TOP OF DATASHEET</title>
+            <para>
+              <itemizedlist>
+                <listitem>
+                  <para> Park your vehicle at &gt;40m from the bird point. </para>
+                </listitem>
+                <listitem>
+                  <para> Approach the plot as quietly as possible to minimize disturbance to the
+                    birds present. </para>
+                </listitem>
+                <listitem>
+                  <para>In the "Notable additional bird species" section, make note of any bird
+                    species flushed by the approach in case they do not return during the count.
+                  </para>
+                </listitem>
+                <listitem>
+                  <para> Under "Notable additional bird species", note bird species seen/heard
+                    before and/or after the count. Bird species recorded under this section are
+                    species NOT observed during the count but observed while at the site. </para>
+                </listitem>
+                <listitem>
+                  <para> Stand quietly at plot center for 5 minutes before starting the count. This
+                    is essential to allow any disturbance caused by the approach to settle down.
+                  </para>
+                </listitem>
+                <listitem>
+                  <para> Use this 5-minute settle-down time to fill out the information at the top
+                    of the datasheet, set up the noise meter, and find your distance brackets (5m,
+                    10m, 20m, 40m) with the range finder. Note that the range finder MAY be in
+                    yards. If so, the conversion of yards to meters is: 5m = 5.4yrd; 10m = 10.9yrd;
+                    20m = 21.9yrd; 40m = 43.7yrd. </para>
+                </listitem>
+                <listitem>
+                  <para> Record in the "Site condition" section any unusual circumstances around the
+                    plot, such as construction activity or flooding, or anything you noticed that
+                    have changed since your last visit. Also note presence of water (or absence of
+                    it) at sites where water is typically present such as at the riparian sites
+                    (site code starting with "EE", "EN", "PE", or "PN"). </para>
+                </listitem>
+                <listitem>
+                  <para> Record "Site Obstruction" as the percent of the horizon view that is
+                    blocked by something within a 20-m radius of the point. Record this every visit,
+                    even if it does not appear to have changed since your last visit. Record in 5%
+                    increments. </para>
+                </listitem>
+              </itemizedlist>
+            </para>
+          </section>
+          <section>
+            <title>CONDUCTING THE COUNT</title>
+            <para> After the 5-minute settle-down period, set a watch or timer and conduct the count
+              for 15 minutes. Rotate slowly in place and record all birds seen and/or heard. For
+              each observation, note the following in the appropriate column of the data sheet. </para>
+            <para> Species </para>
+            <para>
+              <itemizedlist>
+                <listitem>
+                  <para> the four-letter (English name) 54th AOU Supplement (2013) alpha codes if
+                    known (see bird list code provided), or write down the complete common name.
+                  </para>
+                </listitem>
+                <listitem>
+                  <para> If the species cannot be positively identified, use the closest taxonomic
+                    affiliation (it is better to record something as "unknown" rather than
+                    guessing). Make sure you look at all the "unidentified" code options listed on
+                    the bird list code provided to pick the most appropriate code. </para>
+                </listitem>
+              </itemizedlist>
+            </para>
+            <para> Number of Individuals and Distance </para>
+            <para>
+              <itemizedlist>
+                <listitem>
+                  <para> Usually, a single individual bird will be recorded per line. </para>
+                </listitem>
+                <listitem>
+                  <para> Only record a number greater than one on a single line if birds of the same
+                    species are observed very close together, such as a flock or family group.
+                  </para>
+                </listitem>
+                <listitem>
+                  <para> If a mixed flock is observed, put each species on a separate line and note
+                    in the "Notes" column that they were part of a mixed flock. </para>
+                </listitem>
+                <listitem>
+                  <para> Record estimated flock sizes (e.g., "10-20" or "15+") only if you cannot
+                    count them all. </para>
+                </listitem>
+                <listitem>
+                  <para> Write the number of individuals observed in the appropriate distance
+                    columns. </para>
+                </listitem>
+                <listitem>
+                  <para>If a bird moves during the count, record only the distance at which it was
+                    first observed. </para>
+                </listitem>
+                <listitem>
+                  <para> Pay close attention to bird movement to avoid counting birds twice. </para>
+                </listitem>
+                <listitem>
+                  <para> Birds such as hummingbirds should be recorded in the distance column if
+                    they are using the habitat (such as when they are observed foraging) even if
+                    they are not perched per say. However, if you see them just flying quickly by or
+                    chasing each other, then they should be recorded as FT. </para>
+                </listitem>
+              </itemizedlist>
+            </para>
+            <para> Fly-Throughs (FT) </para>
+            <para>
+              <itemizedlist>
+                <listitem>
+                  <para> If a bird is seen flying through the count area below the tallest structure
+                    or vegetation, and not observed taking off or landing, record it in the "FT"
+                    column only, not in the distance columns. </para>
+                </listitem>
+                <listitem>
+                  <para> See note above regarding when to record hummingbirds as FT. </para>
+                </listitem>
+                <listitem>
+                  <para> High flying birds can be noted as a FT only if they are "aerial screeners"
+                    using the habitat, such as a hawk circling 100 feet overhead looking for food.
+                    Make a note if the aerial screener is flying higher than the tallest structure.
+                  </para>
+                </listitem>
+                <listitem>
+                  <para> You may note in the "Site Condition" section any unusual fly-overs of birds
+                    NOT using the habitat, such as a flock of Pelicans flying above the city.
+                  </para>
+                </listitem>
+              </itemizedlist>
+            </para>
+            <para> Seen (S) or Heard (H) Columns </para>
+            <para>
+              <itemizedlist>
+                <listitem>
+                  <para> Record with a check mark whether the bird was identified from sight (S) or
+                    sound (H), or both. Use caution with similar-sounding birds like Juncos and
+                    Chipping Sparrows, or with mimics and imitators, like Mockingbirds and
+                    Starlings. </para>
+                </listitem>
+              </itemizedlist>
+            </para>
+            <para> Direction </para>
+            <para>
+              <itemizedlist>
+                <listitem>
+                  <para> Record the direction the bird was first observed or heard. This may mean
+                    recording a bird heard to the south (S) even though you were facing northwest
+                    (N/W) at the time. </para>
+                </listitem>
+                <listitem>
+                  <para> Use the cardinal and mid-cardinal points of the compass (N, N/E, E, S/E, S,
+                    S/W, W, N/W) in this column. </para>
+                </listitem>
+              </itemizedlist>
+            </para>
+          </section>
+          <section>
+            <title>ADDITIONAL INSTRUCTIONS</title>
+            <para>
+              <itemizedlist>
+                <listitem>
+                  <para> After the count is completed and before leaving the site, review your data
+                    sheet to ensure you have filled it correctly: make sure you have a count and
+                    distance for all observations, and that the top part of your datasheet is
+                    complete. </para>
+                </listitem>
+                <listitem>
+                  <para> Record under "Notable additional bird species" section ONLY birds USING THE
+                    HABITAT. This section is to record bird species seen using the habitat, but not
+                    recorded during the count. </para>
+                </listitem>
+                <listitem>
+                  <para> Under the "Site Condition" section, you may note species such as Cormorants
+                    or Pelicans flying high above but NOT using the habitat. </para>
+                </listitem>
+                <listitem>
+                  <para> Record under "Non-bird species present" any non-bird species observed at
+                    the site or fresh signs of non-bird species (i.e., coyote scat) at the site
+                  </para>
+                </listitem>
+                <listitem>
+                  <para> Wear drab clothing and avoid bold patterns that might scare away some
+                    birds, or attract other ones. </para>
+                </listitem>
+                <listitem>
+                  <para> During the count, do not "pish", "squeak", or use any other methods to
+                    encourage birds to show themselves. This would artificially inflate the bird
+                    densities recorded and invalidate the data collected. If you want to see a bird
+                    you had difficulty identifying, you can "pish" only after the count is
+                    completed. </para>
+                </listitem>
+                <listitem>
+                  <para> Use the 15-minute count period effectively; do not spend precious time
+                    trying to identify a bird that is far enough so that a spotting scope would be
+                    necessary to identify the species. </para>
+                </listitem>
+                <listitem>
+                  <para> Do not start or continue a count if personal safety is threatened in any
+                    way. Notify CAP LTER bird research group managers of any threat to safety
+                    encountered at a research plot. </para>
+                </listitem>
+                <listitem>
+                  <para> If the full 15-minute point count survey cannot be completed entirely for
+                    any reasons (e.g. weather, time limits, safety, etc.), the count must be re-done
+                    entirely and completed at another time within the season survey window. </para>
+                </listitem>
+              </itemizedlist>
+            </para>
+          </section>
+          <section>
+            <title>DATA AND COMMUNICATION</title>
+            <para>
+              <itemizedlist>
+                <listitem>
+                  <para> To minimize errors, please review and complete your data sheets within a
+                    day or so after the survey, preferably the day of the survey. In between others,
+                    make sure you did not leave any blank spaces, review all the alpha codes (if
+                    uncertain of an alpha code, verify it with the bird list code provided or write
+                    the FULL common name), complete your notes and make them concise, and preform
+                    necessary research (listen to calls and/or look at different field guides) to
+                    fill in your uncertain identification(s) when possible. The datasheets must be
+                    clear and easy to read to facilitate data entry and prevent errors. </para>
+                </listitem>
+                <listitem>
+                  <para> All completed datasheets (reviewed for errors) must be returned to ASU
+                    within two weeks of the last survey completed during that season. </para>
+                </listitem>
+                <listitem>
+                  <para> To facilitate communication and to aid the supervisor in tracking project
+                    progress and scheduling, make at least one entry per week on the google+ project
+                    resource page – be sure particularly to note if you surveyed all your assigned
+                    sites for the week or if you missed some (specify which ones), report
+                    interesting/unusual sightings and specify where you saw them, and report any
+                    problems (i.e., site access issues, road closures, safety concerns, scheduling
+                    issues, etc). </para>
+                </listitem>
+              </itemizedlist>
+            </para>
+          </section>
+        </description>
+      </methodStep>
+    </methods>
+    <dataTable id="46_core_birds_ee23527b9fad8b2ead1a6f0b4471ab1e.csv" system="uuid">
+      <entityName>46_core_birds_ee23527b9fad8b2ead1a6f0b4471ab1e.csv</entityName>
+      <entityDescription>bird survey sampling details (site, date, time, observer, site conditions, and notes) and birds surveyed (type, number, distance from observer, behavior)</entityDescription>
+      <physical>
+        <objectName>46_core_birds_ee23527b9fad8b2ead1a6f0b4471ab1e.csv</objectName>
+        <size unit="byte">31865145</size>
+        <authentication method="MD5">ee23527b9fad8b2ead1a6f0b4471ab1e</authentication>
+        <dataFormat>
+          <textFormat>
+            <numHeaderLines>1</numHeaderLines>
+            <recordDelimiter>\r\n</recordDelimiter>
+            <attributeOrientation>column</attributeOrientation>
+            <simpleDelimited>
+              <fieldDelimiter>,</fieldDelimiter>
+              <quoteCharacter>"</quoteCharacter>
+            </simpleDelimited>
+          </textFormat>
+        </dataFormat>
+        <distribution>
+          <online>
+            <url>https://pasta.lternet.edu/package/data/eml/knb-lter-cap/46/15/1ac975d0d3272f2eabe68a66e9f908ad</url>
+          </online>
+        </distribution>
+      </physical>
+      <attributeList>
+        <attribute>
+          <attributeName>site_code</attributeName>
+          <attributeDefinition>survey location identifier</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>survey location identifier</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>location_type</attributeName>
+          <attributeDefinition>survey site type</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>ESCA</code>
+                    <definition>colocated with Ecological Survey of Central Arizona (ESCA)</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>NDV</code>
+                    <definition>North Desert Village, ASU Polytechnic Campus</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>Riparian</code>
+                    <definition>Riparian habitat</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>PASS</code>
+                    <definition>Phoenix Area Social Survey (PASS) study neighborhoods</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>DesertFertilization</code>
+                    <definition>Phoenix area mountain parks that are part of the Desert Fertilization study</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>SRBP</code>
+                    <definition>Salt River Biological Project</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>survey_date</attributeName>
+          <attributeDefinition>survey date</attributeDefinition>
+          <storageType>date</storageType>
+          <measurementScale>
+            <dateTime>
+              <formatString>YYYY-MM-DD</formatString>
+            </dateTime>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>time_start</attributeName>
+          <attributeDefinition>survey start time</attributeDefinition>
+          <storageType>date</storageType>
+          <measurementScale>
+            <dateTime>
+              <formatString>hh:mm:ss</formatString>
+            </dateTime>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>time_end</attributeName>
+          <attributeDefinition>survey end time</attributeDefinition>
+          <storageType>date</storageType>
+          <measurementScale>
+            <dateTime>
+              <formatString>hh:mm:ss</formatString>
+            </dateTime>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>observer_name_part</attributeName>
+          <attributeDefinition>truncated name of surveyor</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>truncated name of surveyor</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>wind_speed</attributeName>
+          <attributeDefinition>wind speed</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>kilometersPerHour</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>wind_dir</attributeName>
+          <attributeDefinition>wind direction</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>NE</code>
+                    <definition>north east</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>S</code>
+                    <definition>south</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>SE</code>
+                    <definition>south east</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>NW</code>
+                    <definition>north west</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>E</code>
+                    <definition>east</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>N</code>
+                    <definition>north</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>W</code>
+                    <definition>west</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>SW</code>
+                    <definition>south west</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>air_temp</attributeName>
+          <attributeDefinition>air temperature</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>celsius</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>cloud_cover</attributeName>
+          <attributeDefinition>percent cloud cover</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>dimensionless</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>survey_notes</attributeName>
+          <attributeDefinition>notes regarding survey</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>notes regarding survey</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>human_activity_notes</attributeName>
+          <attributeDefinition>notes regarding any human activity during the survey</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>notes regarding any human activity during the survey</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>wind</attributeName>
+          <attributeDefinition>qualitative assessment of wind speed during the survey</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>none</code>
+                    <definition>no perecptible wind</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>light</code>
+                    <definition>light wind</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>gusts</code>
+                    <definition>wind gusts</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>precipitation</attributeName>
+          <attributeDefinition>qualitative assessment of precipitation during the survey</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>none</code>
+                    <definition>no precipitation</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>light_rain</code>
+                    <definition>light rain</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>disturbances</attributeName>
+          <attributeDefinition>indication of a disturbance to the surveyor at the survey location during the survey</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>0</code>
+                    <definition>no perceptible disturbance to observer or in the vicinity during the survey</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>1</code>
+                    <definition>disturbance occurred during the survey</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>sight_obstruct</attributeName>
+          <attributeDefinition>percent of the view obstructed</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>dimensionless</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>noise_level</attributeName>
+          <attributeDefinition>qualitative assessment of noise level during the survey</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>none</code>
+                    <definition>no noise during survey</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>low</code>
+                    <definition>low level noise during the survey</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>high</code>
+                    <definition>high level of noise during the survey</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>site_condition</attributeName>
+          <attributeDefinition>notes regarding the condition of the survey location</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>notes regarding the condition of the survey location</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>non_bird_species</attributeName>
+          <attributeDefinition>notes regarding non-bird fauna observed during the survey</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>notes regarding non-bird fauna observed during the survey</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>code</attributeName>
+          <attributeDefinition>four-letter alpha code of observed taxon</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>four-letter alpha code of observed taxon</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>common_name</attributeName>
+          <attributeDefinition>common name of observed taxon</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>common name of observed taxon</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>distance</attributeName>
+          <attributeDefinition>relative distance or position of observed bird(s) relative to the observer</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>0-5</code>
+                    <definition>bird observed within zero to five meters of observer</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>5-10</code>
+                    <definition>bird observed five to ten meters from observer</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>10-20</code>
+                    <definition>bird observed ten to twenty meters from observer</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>20-40</code>
+                    <definition>bird observed twenty to forty meters from observer</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>&gt;40</code>
+                    <definition>bird observed forty or more meters from observer</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>FT</code>
+                    <definition>bird is seen flying through the count area below the tallest structure or vegetation, and not observed taking off or landing</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>bird_count</attributeName>
+          <attributeDefinition>quantity of the observed taxon</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>number</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>observation_notes</attributeName>
+          <attributeDefinition>notes regarding bird observation</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>notes regarding bird observation</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>seen</attributeName>
+          <attributeDefinition>indication of whether the bird was seen</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>0</code>
+                    <definition>bird not identified by sight</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>1</code>
+                    <definition>bird identified by sight</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>heard</attributeName>
+          <attributeDefinition>indication of whether the bird was heard</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>0</code>
+                    <definition>bird not identified by sound</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>1</code>
+                    <definition>bird identified by sound</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>direction</attributeName>
+          <attributeDefinition>direction of the bird</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <enumeratedDomain>
+                  <codeDefinition>
+                    <code>NW</code>
+                    <definition>north west</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>S</code>
+                    <definition>south</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>N</code>
+                    <definition>north</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>NE</code>
+                    <definition>north east</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>SE</code>
+                    <definition>south east</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>W</code>
+                    <definition>west</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>SW</code>
+                    <definition>south west</definition>
+                  </codeDefinition>
+                  <codeDefinition>
+                    <code>E</code>
+                    <definition>east</definition>
+                  </codeDefinition>
+                </enumeratedDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>QCcomment</attributeName>
+          <attributeDefinition>quality control comments</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>quality control comments</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+        </attribute>
+      </attributeList>
+      <numberOfRecords>151383</numberOfRecords>
+    </dataTable>
+    <otherEntity>
+      <entityName>46_core_bird_locations_500433d02ee19d938b4b4bc48928c6df.kml</entityName>
+      <entityDescription>bird survey locations</entityDescription>
+      <physical>
+        <objectName>46_core_bird_locations_500433d02ee19d938b4b4bc48928c6df.kml</objectName>
+        <size unit="byte">31183</size>
+        <authentication method="MD5">500433d02ee19d938b4b4bc48928c6df</authentication>
+        <dataFormat>
+          <externallyDefinedFormat>
+            <formatName>kml</formatName>
+          </externallyDefinedFormat>
+        </dataFormat>
+        <distribution>
+          <online>
+            <url>https://pasta.lternet.edu/package/data/eml/knb-lter-cap/46/15/f5a501a8dcb69ff228eb0d55e26a01f3</url>
+          </online>
+        </distribution>
+      </physical>
+      <entityType>kml</entityType>
+    </otherEntity>
+  </dataset>
+</eml:eml>

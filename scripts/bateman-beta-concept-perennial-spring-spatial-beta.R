@@ -1,0 +1,114 @@
+## temporal variation in spatial beta-diversity
+
+# get standardised data
+source('~/Dropbox/MoBD (Measurements of Beta diversity)/Beta_paper/bateman-beta-concept-perennial-spring-standardise-effort.R')
+
+spatial_beta_calcs <- rip2 %>% 
+  unnest(data) %>% 
+  group_by(habitat, year, season) %>% 
+  nest(data = c(site_code, species, N)) %>% 
+  mutate(wide_data = map(data, ~pivot_wider(data = ., 
+                                            names_from = species, 
+                                            values_from = N,
+                                            values_fill = 0))) %>% 
+  ungroup()
+
+spatial_targetC <- spatial_beta_calcs %>% 
+  mutate(target_C = map(wide_data, ~mobr::C_target(x = .[,-c(1)], 
+                                                   factor = 2))) %>%
+  unnest(target_C) %>% 
+  ungroup() %>% 
+  summarise(C_target = min(target_C)) %>% 
+  ungroup()
+
+spatial_targetN <- rip2 %>% 
+  filter(season=='spring' & habitat %in% c('perennial-engineered', 
+                                           'perennial-natural')) %>%
+  unnest(data) %>% 
+  group_by(site_code, habitat, season, year) %>% 
+  summarise(N = sum(N)) %>% 
+  ungroup() %>% 
+  filter(N == min(N)) %>% 
+  pull(N)
+
+
+spatial_beta_calcs <- spatial_beta_calcs %>% 
+  mutate(beta_C = map(wide_data, ~mobr::beta_C(x = .[,-c(1)], 
+                                               C = spatial_targetC$C_target, 
+                                               extrapolation = TRUE)),
+         beta_S = map(wide_data, ~mobr::calc_comm_div(abund_mat = .[,-c(1)], 
+                                                      index = 'S', 
+                                                      coverage = FALSE, 
+                                                      scales = 'beta')),
+         beta_S_PIE = map(wide_data, ~mobr::calc_comm_div(abund_mat = .[,-c(1)], 
+                                                          index = 'S_PIE', 
+                                                          coverage = FALSE, 
+                                                          scales = 'beta')),
+         beta_S_n = map(wide_data, ~mobr::calc_comm_div(abund_mat = .[,-c(1)], 
+                                                        index = 'S_n', 
+                                                        coverage = FALSE, 
+                                                        effort = spatial_targetN,
+                                                        scales = 'beta')))
+
+
+spatial_beta_dat <- spatial_beta_calcs %>% 
+  unnest(cols = beta_S) %>% 
+  rename(beta_S = value) %>% 
+  dplyr::select(-c(scale, index, sample_size, effort, coverage)) %>% 
+  unnest(cols = beta_S_PIE) %>% 
+  rename(beta_S_PIE = value) %>% 
+  dplyr::select(-c(scale, index, sample_size, effort, coverage)) %>% 
+  unnest(cols = beta_S_n) %>% 
+  rename(beta_S_n = value) %>% 
+  dplyr::select(-c(scale, index, sample_size, effort, coverage)) %>% 
+  unnest(cols = beta_C) %>% 
+  dplyr::select(-c(data, wide_data)) %>% 
+  pivot_longer(cols = beta_C:beta_S_n, names_to = 'index', 
+               values_to = 'value') %>% 
+  mutate(index = factor(index, levels = c('beta_S',  
+                                          'beta_S_n', 
+                                          'beta_C', 
+                                          'beta_S_PIE'))) 
+
+spatial_beta_dat$index <- factor(spatial_beta_dat$index,
+                                 labels = c(expression(beta[S]),
+                                            expression(beta[S[n]]),
+                                            expression(beta[C]),
+                                            expression(beta[S[PIE]])))
+panel_B <- spatial_beta_dat %>% 
+  filter(index %in% c('beta[S]', 'beta[C]')) %>% 
+  ggplot() +
+  facet_grid(~index, labeller = label_parsed) +
+  stat_smooth(aes(x = year, y = value, colour = habitat, linetype = habitat,
+                  fill = habitat),
+              method = 'gam') +
+  geom_point(aes(x = year, y = value, colour = habitat)) +
+  scale_colour_manual(name = 'Habitat',
+                      values = c('perennial-engineered' = '#a6611a',
+                                 'perennial-natural' = '#80cdc1'),
+                      label = c('engineered',
+                                'natural'),
+                      # guide = 'none'
+  )  +
+  scale_linetype_manual(name = 'Habitat',
+                        values = c('perennial-engineered' = 1,
+                                   'perennial-natural' = 1),
+                        label = c('engineered',
+                                  'natural')) +
+  scale_fill_manual(name = 'Habitat',
+                    values = c('perennial-engineered' = '#a6611a',
+                               'perennial-natural' = '#80cdc1'),
+                        label = c('engineered',
+                                  'natural')) +
+  labs(x = 'Year',
+       y = 'Metric value') +
+  scale_x_continuous(breaks = c(2004, 2008, 2012, 2016),
+                     labels = c(2004, '', 2012, '')) +
+  theme_bw() +
+  theme(legend.position = c(1,1),
+        legend.justification = c(1,1),
+        legend.background = element_blank()) +
+  guides(colour = guide_legend(nrow = 2, title = NULL, reverse = TRUE),
+         linetype = guide_legend(nrow = 2, title = NULL, reverse = TRUE),
+         fill = guide_legend(nrow = 2, title = NULL, reverse = TRUE))
+

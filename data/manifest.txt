@@ -1,0 +1,6 @@
+Manifest file for knb-lter-cap.46.15-4c9184f37cff01bcdc32dc486ec36961.zip created on Mon Oct 03 07:35:06 MDT 2022
+46_core_birds_ee23527b9fad8b2ead1a6f0b4471ab1e.csv (31865145 bytes)
+46_core_bird_locations_500433d02ee19d938b4b4bc48928c6df.kml (31183 bytes)
+knb-lter-cap.46.15.xml (56633 bytes)
+knb-lter-cap.46.15.txt (38387 bytes)
+knb-lter-cap.46.15.report.xml (33411 bytes)

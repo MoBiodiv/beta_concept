@@ -1,0 +1,738 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document id="root_doc">
+<Schema name="core_bird_locations" id="core_bird_locations">
+	<SimpleField name="site_code" type="string"></SimpleField>
+	<SimpleField name="location_type" type="string"></SimpleField>
+</Schema>
+<Folder><name>core_bird_locations</name>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#core_bird_locations">
+		<SimpleData name="site_code">DBG</SimpleData>
+		<SimpleData name="location_type">DesertFertilization</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-111.94313,33.45716</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#core_bird_locations">
+		<SimpleData name="site_code">PWP</SimpleData>
+		<SimpleData name="location_type">DesertFertilization</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-112.01406,33.56412</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#core_bird_locations">
+		<SimpleData name="site_code">SMW</SimpleData>
+		<SimpleData name="location_type">DesertFertilization</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-112.07801,33.34228</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#core_bird_locations">
+		<SimpleData name="site_code">SRR</SimpleData>
+		<SimpleData name="location_type">DesertFertilization</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-111.57948,33.54671</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#core_bird_locations">
+		<SimpleData name="site_code">UMP</SimpleData>
+		<SimpleData name="location_type">DesertFertilization</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-111.61554,33.46646</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#core_bird_locations">
+		<SimpleData name="site_code">WTM</SimpleData>
+		<SimpleData name="location_type">DesertFertilization</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-112.49995,33.60488</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#core_bird_locations">
+		<SimpleData name="site_code">AA-17</SimpleData>
+		<SimpleData name="location_type">ESCA</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-111.80062691,33.45215242</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#core_bird_locations">
+		<SimpleData name="site_code">AA-20</SimpleData>
+		<SimpleData name="location_type">ESCA</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-111.82392055,33.31575447</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#core_bird_locations">
+		<SimpleData name="site_code">AB-19</SimpleData>
+		<SimpleData name="location_type">ESCA</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-111.77364,33.35162</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#core_bird_locations">
+		<SimpleData name="site_code">AC-16</SimpleData>
+		<SimpleData name="location_type">ESCA</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-111.71943351,33.47893705</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#core_bird_locations">
+		<SimpleData name="site_code">AD-10</SimpleData>
+		<SimpleData name="location_type">ESCA</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-111.71140004,33.67689447</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#core_bird_locations">
+		<SimpleData name="site_code">AD-21</SimpleData>
+		<SimpleData name="location_type">ESCA</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-111.70294153,33.30702446</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#core_bird_locations">
+		<SimpleData name="site_code">AE-23</SimpleData>
+		<SimpleData name="location_type">ESCA</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-111.62649983,33.21869957</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#core_bird_locations">
+		<SimpleData name="site_code">AF-12</SimpleData>
+		<SimpleData name="location_type">ESCA</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-111.62201023,33.6102352</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#core_bird_locations">
+		<SimpleData name="site_code">F-8</SimpleData>
+		<SimpleData name="location_type">ESCA</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-112.74192461,33.75598493</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#core_bird_locations">
+		<SimpleData name="site_code">G-15</SimpleData>
+		<SimpleData name="location_type">ESCA</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-112.67365342,33.49892344</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#core_bird_locations">
+		<SimpleData name="site_code">I-11</SimpleData>
+		<SimpleData name="location_type">ESCA</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-112.61775501,33.65442124</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#core_bird_locations">
+		<SimpleData name="site_code">I-17</SimpleData>
+		<SimpleData name="location_type">ESCA</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-112.57693338,33.44059202</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#core_bird_locations">
+		<SimpleData name="site_code">L-7</SimpleData>
+		<SimpleData name="location_type">ESCA</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-112.45220396,33.78130347</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#core_bird_locations">
+		<SimpleData name="site_code">M-16</SimpleData>
+		<SimpleData name="location_type">ESCA</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-112.444002161,33.482673175000102</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#core_bird_locations">
+		<SimpleData name="site_code">M-9</SimpleData>
+		<SimpleData name="location_type">ESCA</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-112.440622368419,33.7231006287547</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#core_bird_locations">
+		<SimpleData name="site_code">N-12</SimpleData>
+		<SimpleData name="location_type">ESCA</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-112.37598673,33.62205905</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#core_bird_locations">
+		<SimpleData name="site_code">O-9</SimpleData>
+		<SimpleData name="location_type">ESCA</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-112.35713683,33.70631712</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#core_bird_locations">
+		<SimpleData name="site_code">P-16</SimpleData>
+		<SimpleData name="location_type">ESCA</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-112.30388325,33.48209987</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#core_bird_locations">
+		<SimpleData name="site_code">P-18</SimpleData>
+		<SimpleData name="location_type">ESCA</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-112.29121618,33.4117783</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#core_bird_locations">
+		<SimpleData name="site_code">Q-7</SimpleData>
+		<SimpleData name="location_type">ESCA</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-112.25000446,33.78404344</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#core_bird_locations">
+		<SimpleData name="site_code">R-12</SimpleData>
+		<SimpleData name="location_type">ESCA</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-112.1936152,33.60711789</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#core_bird_locations">
+		<SimpleData name="site_code">S-16</SimpleData>
+		<SimpleData name="location_type">ESCA</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-112.14184589,33.4667159</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#core_bird_locations">
+		<SimpleData name="site_code">T-11</SimpleData>
+		<SimpleData name="location_type">ESCA</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-112.13335,33.64816</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#core_bird_locations">
+		<SimpleData name="site_code">T-13</SimpleData>
+		<SimpleData name="location_type">ESCA</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-112.13908,33.57299</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#core_bird_locations">
+		<SimpleData name="site_code">T-19</SimpleData>
+		<SimpleData name="location_type">ESCA</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-112.12080379,33.37853123</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#core_bird_locations">
+		<SimpleData name="site_code">U-12</SimpleData>
+		<SimpleData name="location_type">ESCA</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-112.07862,33.62722</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#core_bird_locations">
+		<SimpleData name="site_code">U-13</SimpleData>
+		<SimpleData name="location_type">ESCA</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-112.08335,33.59796</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#core_bird_locations">
+		<SimpleData name="site_code">U-8</SimpleData>
+		<SimpleData name="location_type">ESCA</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-112.0919,33.7711</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#core_bird_locations">
+		<SimpleData name="site_code">V-13</SimpleData>
+		<SimpleData name="location_type">ESCA</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-112.02280878,33.58346223</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#core_bird_locations">
+		<SimpleData name="site_code">V-14</SimpleData>
+		<SimpleData name="location_type">ESCA</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-112.05477,33.55222</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#core_bird_locations">
+		<SimpleData name="site_code">V-16</SimpleData>
+		<SimpleData name="location_type">ESCA</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-112.046812844,33.471134262000099</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#core_bird_locations">
+		<SimpleData name="site_code">V-18</SimpleData>
+		<SimpleData name="location_type">ESCA</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-112.02883017,33.38786046</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#core_bird_locations">
+		<SimpleData name="site_code">V-20</SimpleData>
+		<SimpleData name="location_type">ESCA</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-112.03228427,33.32819623</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#core_bird_locations">
+		<SimpleData name="site_code">W-15</SimpleData>
+		<SimpleData name="location_type">ESCA</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-111.99231927,33.52388542</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#core_bird_locations">
+		<SimpleData name="site_code">W-17</SimpleData>
+		<SimpleData name="location_type">ESCA</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-111.99955512,33.44463972</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#core_bird_locations">
+		<SimpleData name="site_code">W-6</SimpleData>
+		<SimpleData name="location_type">ESCA</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-112.01090472,33.82083085</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#core_bird_locations">
+		<SimpleData name="site_code">X-18</SimpleData>
+		<SimpleData name="location_type">ESCA</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-111.92893323,33.41962662</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#core_bird_locations">
+		<SimpleData name="site_code">X-8</SimpleData>
+		<SimpleData name="location_type">ESCA</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-111.95039023,33.7766713</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#core_bird_locations">
+		<SimpleData name="site_code">Y-19</SimpleData>
+		<SimpleData name="location_type">ESCA</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-111.91532,33.37724</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#core_bird_locations">
+		<SimpleData name="site_code">Z-23</SimpleData>
+		<SimpleData name="location_type">ESCA</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-111.87161,33.21929</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#core_bird_locations">
+		<SimpleData name="site_code">NDV-C</SimpleData>
+		<SimpleData name="location_type">NDV</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-111.67760412,33.31217213</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#core_bird_locations">
+		<SimpleData name="site_code">NDV-M</SimpleData>
+		<SimpleData name="location_type">NDV</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-111.68083778,33.3107187</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#core_bird_locations">
+		<SimpleData name="site_code">NDV-N</SimpleData>
+		<SimpleData name="location_type">NDV</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-111.6808283,33.31423902</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#core_bird_locations">
+		<SimpleData name="site_code">NDV-O</SimpleData>
+		<SimpleData name="location_type">NDV</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-111.67849193,33.31160861</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#core_bird_locations">
+		<SimpleData name="site_code">NDV-X</SimpleData>
+		<SimpleData name="location_type">NDV</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-111.6809102,33.31232878</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#core_bird_locations">
+		<SimpleData name="site_code">711A</SimpleData>
+		<SimpleData name="location_type">PASS</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-112.08593,33.43214</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#core_bird_locations">
+		<SimpleData name="site_code">711B</SimpleData>
+		<SimpleData name="location_type">PASS</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-112.08698,33.43461</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#core_bird_locations">
+		<SimpleData name="site_code">711C</SimpleData>
+		<SimpleData name="location_type">PASS</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-112.0923,33.4358</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#core_bird_locations">
+		<SimpleData name="site_code">AA9</SimpleData>
+		<SimpleData name="location_type">PASS</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-111.831559366855998,33.722792223544502</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#core_bird_locations">
+		<SimpleData name="site_code">AA9B</SimpleData>
+		<SimpleData name="location_type">PASS</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-111.88552,33.65827</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#core_bird_locations">
+		<SimpleData name="site_code">AA9C</SimpleData>
+		<SimpleData name="location_type">PASS</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-111.88956,33.66616</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#core_bird_locations">
+		<SimpleData name="site_code">IBWA</SimpleData>
+		<SimpleData name="location_type">PASS</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-111.91157,33.47343</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#core_bird_locations">
+		<SimpleData name="site_code">IBWB</SimpleData>
+		<SimpleData name="location_type">PASS</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-111.91148,33.47124</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#core_bird_locations">
+		<SimpleData name="site_code">IBWC</SimpleData>
+		<SimpleData name="location_type">PASS</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-111.91415,33.4696</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#core_bird_locations">
+		<SimpleData name="site_code">PWRA</SimpleData>
+		<SimpleData name="location_type">PASS</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-111.70968,33.20731</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#core_bird_locations">
+		<SimpleData name="site_code">PWRB</SimpleData>
+		<SimpleData name="location_type">PASS</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-111.71894,33.24183</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#core_bird_locations">
+		<SimpleData name="site_code">PWRC</SimpleData>
+		<SimpleData name="location_type">PASS</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-111.75764,33.25643</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#core_bird_locations">
+		<SimpleData name="site_code">Q15</SimpleData>
+		<SimpleData name="location_type">PASS</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-112.256579389107998,33.506394426692303</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#core_bird_locations">
+		<SimpleData name="site_code">Q15B</SimpleData>
+		<SimpleData name="location_type">PASS</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-112.266,33.50165</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#core_bird_locations">
+		<SimpleData name="site_code">Q15C</SimpleData>
+		<SimpleData name="location_type">PASS</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-112.25745,33.49738</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#core_bird_locations">
+		<SimpleData name="site_code">R18</SimpleData>
+		<SimpleData name="location_type">PASS</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-112.198706101637001,33.418739777382001</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#core_bird_locations">
+		<SimpleData name="site_code">R18B</SimpleData>
+		<SimpleData name="location_type">PASS</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-112.21421,33.41015</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#core_bird_locations">
+		<SimpleData name="site_code">R18C</SimpleData>
+		<SimpleData name="location_type">PASS</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-112.17001,33.39753</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#core_bird_locations">
+		<SimpleData name="site_code">TRSA</SimpleData>
+		<SimpleData name="location_type">PASS</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-112.24509,33.43389</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#core_bird_locations">
+		<SimpleData name="site_code">TRSB</SimpleData>
+		<SimpleData name="location_type">PASS</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-112.28805,33.42514</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#core_bird_locations">
+		<SimpleData name="site_code">TRSC</SimpleData>
+		<SimpleData name="location_type">PASS</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-112.27385,33.40209</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#core_bird_locations">
+		<SimpleData name="site_code">U18</SimpleData>
+		<SimpleData name="location_type">PASS</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-112.090648202210005,33.401286012076802</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#core_bird_locations">
+		<SimpleData name="site_code">U18B</SimpleData>
+		<SimpleData name="location_type">PASS</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-112.09829,33.40558</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#core_bird_locations">
+		<SimpleData name="site_code">U18C</SimpleData>
+		<SimpleData name="location_type">PASS</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-112.09386,33.40068</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#core_bird_locations">
+		<SimpleData name="site_code">U21</SimpleData>
+		<SimpleData name="location_type">PASS</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-112.0597,33.31905</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#core_bird_locations">
+		<SimpleData name="site_code">U21B</SimpleData>
+		<SimpleData name="location_type">PASS</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-112.08096,33.3071</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#core_bird_locations">
+		<SimpleData name="site_code">U21C</SimpleData>
+		<SimpleData name="location_type">PASS</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-112.04609,33.30652</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#core_bird_locations">
+		<SimpleData name="site_code">V14B</SimpleData>
+		<SimpleData name="location_type">PASS</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-112.05521,33.54785</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#core_bird_locations">
+		<SimpleData name="site_code">V14C</SimpleData>
+		<SimpleData name="location_type">PASS</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-112.05283,33.54601</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#core_bird_locations">
+		<SimpleData name="site_code">W15B</SimpleData>
+		<SimpleData name="location_type">PASS</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-111.99351,33.51892</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#core_bird_locations">
+		<SimpleData name="site_code">W15C</SimpleData>
+		<SimpleData name="location_type">PASS</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-111.97997,33.52015</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#core_bird_locations">
+		<SimpleData name="site_code">X17</SimpleData>
+		<SimpleData name="location_type">PASS</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-111.959822,33.425592744693503</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#core_bird_locations">
+		<SimpleData name="site_code">X17B</SimpleData>
+		<SimpleData name="location_type">PASS</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-111.95321,33.42544</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#core_bird_locations">
+		<SimpleData name="site_code">X17C</SimpleData>
+		<SimpleData name="location_type">PASS</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-111.9551,33.42789</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#core_bird_locations">
+		<SimpleData name="site_code">EE-15A</SimpleData>
+		<SimpleData name="location_type">Riparian</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-111.94664729,33.3844927</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#core_bird_locations">
+		<SimpleData name="site_code">EE-6A</SimpleData>
+		<SimpleData name="location_type">Riparian</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-112.25106619,33.61083702</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#core_bird_locations">
+		<SimpleData name="site_code">EE-7C</SimpleData>
+		<SimpleData name="location_type">Riparian</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-112.10832196,33.60987126</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#core_bird_locations">
+		<SimpleData name="site_code">EN-4B</SimpleData>
+		<SimpleData name="location_type">Riparian</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-112.68089849,33.73959387</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#core_bird_locations">
+		<SimpleData name="site_code">EN-7B</SimpleData>
+		<SimpleData name="location_type">Riparian</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-111.97260135,33.81620287</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#core_bird_locations">
+		<SimpleData name="site_code">PE-10B</SimpleData>
+		<SimpleData name="location_type">Riparian</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-112.25664033,33.38940105</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#core_bird_locations">
+		<SimpleData name="site_code">PE-11A</SimpleData>
+		<SimpleData name="location_type">Riparian</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-111.7351686,33.362931</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#core_bird_locations">
+		<SimpleData name="site_code">PE-13A</SimpleData>
+		<SimpleData name="location_type">Riparian</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-112.06876055,33.59830306</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#core_bird_locations">
+		<SimpleData name="site_code">PE-1D</SimpleData>
+		<SimpleData name="location_type">Riparian</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-111.90406077,33.43499182</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#core_bird_locations">
+		<SimpleData name="site_code">PN-1B</SimpleData>
+		<SimpleData name="location_type">Riparian</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-111.65684525,33.54746413</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#core_bird_locations">
+		<SimpleData name="site_code">PN-2A</SimpleData>
+		<SimpleData name="location_type">Riparian</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-111.66807055,33.63757429</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#core_bird_locations">
+		<SimpleData name="site_code">PN-7A</SimpleData>
+		<SimpleData name="location_type">Riparian</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-111.95861145,33.88142221</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#core_bird_locations">
+		<SimpleData name="site_code">Ave35_dwn_B1_CORE</SimpleData>
+		<SimpleData name="location_type">SRBP</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-112.13486343,33.4119291</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#core_bird_locations">
+		<SimpleData name="site_code">Ave67_mid_B1_CORE</SimpleData>
+		<SimpleData name="location_type">SRBP</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-112.20127241,33.39613692</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#core_bird_locations">
+		<SimpleData name="site_code">BM_mid_B2_CORE</SimpleData>
+		<SimpleData name="location_type">SRBP</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-112.30335401,33.38249101</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#core_bird_locations">
+		<SimpleData name="site_code">Price_up_B1_CORE</SimpleData>
+		<SimpleData name="location_type">SRBP</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-111.88609801,33.43850191</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#core_bird_locations">
+		<SimpleData name="site_code">Priest_dwn_B1_CORE</SimpleData>
+		<SimpleData name="location_type">SRBP</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-111.96029671,33.43576689</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#core_bird_locations">
+		<SimpleData name="site_code">Rio_mid_B2_CORE</SimpleData>
+		<SimpleData name="location_type">SRBP</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-112.07501513,33.42176526</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#core_bird_locations">
+		<SimpleData name="site_code">Tonto_up_B1_CORE</SimpleData>
+		<SimpleData name="location_type">SRBP</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-111.60882633,33.5585114</coordinates></Point>
+  </Placemark>
+</Folder>
+</Document></kml>

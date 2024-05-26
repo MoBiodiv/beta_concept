@@ -351,12 +351,14 @@ inset1 <- ggplot() +
              aes(x = index, y = value)) +
   scale_x_discrete(limits = c('beta_S',  'beta_C'), #'beta_S_PIE', 'beta_S_n',
                    labels = c(expression(beta[S]), expression(beta[C])), #expression(beta[S[PIE]]), expression(beta[S[n]]),
-                   name = 'Metric') +
+                   name = '') +
   scale_y_continuous(breaks= c(1, 1.1, 1.2, 1.3, 1.4),
                      labels = c(1, '', 1.2, '', 1.4),
-                     limits = c(0.95, 1.5), name = 'Value') +
+                     limits = c(0.95, 1.4), name = '') +
   theme_minimal() +
-  theme(panel.grid.minor = element_blank())
+  theme(panel.grid.minor = element_blank(), 
+        axis.text.x = element_text(size=15))
+
 
 inset2 <- ggplot() +
   geom_point(data = bind_rows(bS2 %>% 
@@ -365,12 +367,13 @@ inset2 <- ggplot() +
              aes(x = index, y = value)) +
   scale_x_discrete(limits = c('beta_S', 'beta_C'),
                    labels = c(expression(beta[S]), expression(beta[C])),
-                   name = 'Metric') +
+                   name = '') +
   scale_y_continuous(breaks= c(1, 1.1, 1.2, 1.3, 1.4),
                      labels = c(1, '', 1.2, '', 1.4),
-                     limits = c(0.95, 1.5), name = 'Value') +
+                     limits = c(0.95, 1.4), name = '') +
   theme_minimal() +
-  theme(panel.grid.minor = element_blank())
+  theme(panel.grid.minor = element_blank(), 
+        axis.text.x = element_text(size=15))
 
 inset3 <- ggplot() +
   geom_point(data = bind_rows(bS3 %>% 
@@ -379,12 +382,13 @@ inset3 <- ggplot() +
              aes(x = index, y = value)) +
   scale_x_discrete(limits = c('beta_S', 'beta_C'),
                    labels = c(expression(beta[S]), expression(beta[C])),
-                   name = 'Metric') +
-  scale_y_continuous(breaks= c(1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7),
-                     labels = c(1, '', 1.2, '', 1.4, '', 1.6, ''),
-                     limits = c(0.95, 1.7), name = 'Value') +
+                   name = '') +
+  scale_y_continuous(breaks= c(1, 1.1, 1.2, 1.3, 1.4),
+                     labels = c(1, '', 1.2, '', 1.4),
+                     limits = c(0.95, 1.4), name = '') +
   theme_minimal() +
-  theme(panel.grid.minor = element_blank())
+  theme(panel.grid.minor = element_blank(), 
+        axis.text.x = element_text(size=15))
 
 inset4 <- ggplot() +
   geom_point(data = bind_rows(bS4 %>% 
@@ -393,20 +397,20 @@ inset4 <- ggplot() +
              aes(x = index, y = value)) +
   scale_x_discrete(limits = c('beta_S', 'beta_C'),
                    labels = c(expression(beta[S]), expression(beta[C])),
-                   name = 'Metric') +
-  scale_y_continuous(breaks= c(1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7),
-                     labels = c(1, '', 1.2, '', 1.4, '', 1.6, ''),
-                     limits = c(0.95, 1.7), name = 'Value') +
+                   name = '') +
+  scale_y_continuous(breaks= c(1, 1.1, 1.2, 1.3, 1.4),
+                     labels = c(1, '', 1.2, '', 1.4),
+                     limits = c(0.95, 1.4), name = '') +
   theme_minimal() +
-  theme(panel.grid.minor = element_blank())
-
+  theme(panel.grid.minor = element_blank(), 
+        axis.text.x = element_text(size=15))
 
 all_curves <- plot_grid(curve_leg,
                         plot_grid(NULL, 
-                                  rare1 + annotation_custom(ggplotGrob(inset1), xmin = 290, xmax = 1000, ymin = 10, ymax = 40),
-                                  rare4 + annotation_custom(ggplotGrob(inset4), xmin = 290, xmax = 1000, ymin = 10, ymax = 40),
-                                  rare2 + annotation_custom(ggplotGrob(inset2), xmin = 130, xmax = 450, ymin = 10, ymax = 40),
-                                  rare3 + annotation_custom(ggplotGrob(inset3), xmin = 290, xmax = 1000, ymin = 10, ymax = 40),
+                                  rare1 + annotation_custom(ggplotGrob(inset1), xmin = 250, xmax = 1000, ymin = -5, ymax = 40),
+                                  rare4 + annotation_custom(ggplotGrob(inset4), xmin = 250, xmax = 1000, ymin = -5, ymax = 40),
+                                  rare2 + annotation_custom(ggplotGrob(inset2), xmin = 100, xmax = 390, ymin = -5, ymax = 40),
+                                  rare3 + annotation_custom(ggplotGrob(inset3), xmin = 250, xmax = 1000, ymin = -5, ymax = 40),
                                   rel_widths = c(0.05, 1, 1, 1, 1),
                                   nrow = 1),
                         NULL,

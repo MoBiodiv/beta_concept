@@ -8,6 +8,8 @@ Jonathan M. Chase
 The R code for the simulations and case study was created by Shane A. Blowes and
 edited by Daniel McGlinn. 
 
+This code uses the R package `mobr` v3.0.1. 
+
 ## Workflow
 ### Figure 3 
 `Rscript('./scripts/non-spatial-vs-spatial-beta-diversity.R')`

@@ -1,3 +1,6 @@
+
+
+
 # contrast beta-diversity
 contrast_perennial <- rip2 %>% 
   ungroup() %>% 
@@ -13,7 +16,7 @@ contrast_perennial <- rip2 %>%
   ungroup()
 
 targetC_contr_perennial <- contrast_perennial %>% 
-  mutate(target_C = map(wide_data, ~mobr::C_target(x = .[,-1], factor = 2))) %>% 
+  mutate(target_C = map(wide_data, ~mobr::calc_C_target(x = .[,-1], factor = 2))) %>% 
   unnest(target_C) %>% 
   ungroup() %>% 
   summarise(C_target = min(target_C)) %>% 
@@ -32,40 +35,35 @@ targetN_contr_perennial <- rip2 %>%
   pull(N)
 
 contr_beta_calcs_perennial <- contrast_perennial %>% 
-  mutate(beta_C = map(wide_data, possibly(~mobr::beta_C(x = .[,-1], 
-                                                        C = targetC_contr_perennial, 
-                                                        extrapolation = TRUE), 
+  mutate(beta_S_C = map(wide_data, possibly(~mobr::calc_beta_div(abund_mat = .[,-1], 
+                                                                 index = 'S_C',
+                                                        C_target_gamma = targetC_contr_perennial), 
                                           otherwise = NULL)),
-         beta_S = map(wide_data, ~mobr::calc_comm_div(abund_mat = .[,-1], 
-                                                      index = 'S', 
-                                                      scales = 'beta', 
-                                                      coverage = FALSE)),
-         beta_S_PIE = map(wide_data, ~mobr::calc_comm_div(abund_mat = .[,-1], 
-                                                          index = 'S_PIE', 
-                                                          scales = 'beta', 
-                                                          coverage = FALSE)),
-         beta_S_n = map(wide_data, ~mobr::calc_comm_div(abund_mat = .[,-1], 
+         beta_S = map(wide_data, ~mobr::calc_beta_div(abund_mat = .[,-1], 
+                                                      index = 'S')), 
+         beta_S_PIE = map(wide_data, ~mobr::calc_beta_div(abund_mat = .[,-1], 
+                                                          index = 'S_PIE')), 
+         beta_S_n = map(wide_data, ~mobr::calc_beta_div(abund_mat = .[,-1], 
                                                         index = 'S_n',
-                                                        effort = targetN_contr_perennial,
-                                                        scales = 'beta', 
-                                                        coverage = FALSE)))
+                                                        effort = targetN_contr_perennial)))
 
 
 contr_beta_dat <- contr_beta_calcs_perennial %>%
   unnest(cols = beta_S) %>%
   rename(beta_S = value) %>%
-  dplyr::select(-c(scale, index, sample_size, effort, coverage)) %>%
+  dplyr::select(-c(scale, index, sample_size, effort, gamma_coverage)) %>%
   unnest(cols = beta_S_PIE) %>%
   rename(beta_S_PIE = value) %>%
-  dplyr::select(-c(scale, index, sample_size, effort, coverage)) %>%
+  dplyr::select(-c(scale, index, sample_size, effort, gamma_coverage)) %>%
   unnest(cols = beta_S_n) %>%
   rename(beta_S_n = value) %>%
-  dplyr::select(-c(scale, index, sample_size, effort, coverage)) %>%
-  unnest(cols = beta_C) %>%
-  dplyr::select(-c(data, wide_data)) %>%
-  pivot_longer(cols = beta_C:beta_S_n, names_to = 'index', values_to = 'value') %>%
+  dplyr::select(-c(scale, index, sample_size, effort, gamma_coverage)) %>%
+  unnest(cols = beta_S_C) %>%
+  rename(beta_S_C = value) %>%
+  dplyr::select(-c(scale, index, sample_size, effort, gamma_coverage)) %>%
+  pivot_longer(cols = beta_S_C:beta_S_n, names_to = 'index', values_to = 'value') %>%
   mutate(index = factor(index, levels = c('beta_S', 'beta_S_PIE', 
-                                          'beta_S_n', 'beta_C')),
+                                          'beta_S_n', 'beta_S_C')),
          contrast = 'perennial')
 
 

@@ -1,5 +1,5 @@
 # leave-one-out (jackknife) for temporal beta-diversity
-
+library(mobr)
 # get standardised data
 source('./scripts/bateman-beta-concept-perennial-spring-standardise-effort.R')
 
@@ -35,7 +35,7 @@ temporal_beta_jk$wide_data[[1]] %>% nrow()
 
 # calculate target coverage for standardisation
 temporal_targetC_resamps <- temporal_beta_jk %>% 
-  mutate(target_C = map(wide_data, ~mobr::C_target(x = .[,-c(1)], factor = 2))) %>% 
+  mutate(target_C = map(wide_data, ~mobr::calc_C_target(x = .[ , -1], factor = 2))) %>% 
   unnest(target_C) %>% 
   ungroup() %>% 
   summarise(C_target = min(target_C))
@@ -51,40 +51,35 @@ temporal_targetN_resamps <- temporal_beta_jk %>%
   unique()
 
 temporal_beta_resamps_calcs <- temporal_beta_jk %>% 
-  mutate(beta_C = map(wide_data, possibly(~mobr::beta_C(x = .[,-c(1)], 
-                                                        C = temporal_targetC_resamps$C_target, 
-                                                        extrapolation = TRUE), 
+  mutate(beta_S_C = map(wide_data, possibly(~mobr::calc_beta_div(abund_mat = .[ , -1], 
+                                                                 index = 'S_C',
+                                                                 C_target_gamma = temporal_targetC_resamps$C_target), 
                                           otherwise = NULL)),
-         beta_S = map(wide_data, ~mobr::calc_comm_div(abund_mat = .[,-c(1)], 
-                                                      index = 'S', 
-                                                      scales = 'beta', 
-                                                      coverage = FALSE)),
-         beta_S_PIE = map(wide_data, ~mobr::calc_comm_div(abund_mat = .[,-c(1)], 
-                                                          index = 'S_PIE', 
-                                                          scales = 'beta', 
-                                                          coverage = FALSE)),
-         beta_S_n = map(wide_data, ~mobr::calc_comm_div(abund_mat = .[,-c(1)], 
+         beta_S = map(wide_data, ~mobr::calc_beta_div(abund_mat = .[ , -1], 
+                                                      index = 'S')), 
+         beta_S_PIE = map(wide_data, ~mobr::calc_beta_div(abund_mat = .[ , -1], 
+                                                          index = 'S_PIE')), 
+         beta_S_n = map(wide_data, ~mobr::calc_beta_div(abund_mat = .[ , -1], 
                                                         index = 'S_n', 
-                                                        effort = temporal_targetN_resamps,
-                                                        scales = 'beta', 
-                                                        coverage = FALSE)))
+                                                        effort = temporal_targetN_resamps)))
 
 temporal_beta_resamps <- temporal_beta_resamps_calcs %>% 
   unnest(cols = beta_S) %>% 
   rename(beta_S = value) %>% 
-  dplyr::select(-c(scale, index, sample_size, effort, coverage)) %>% 
+  dplyr::select(-c(scale, index, sample_size, effort, gamma_coverage)) %>% 
   unnest(cols = beta_S_PIE) %>% 
   rename(beta_S_PIE = value) %>% 
-  dplyr::select(-c(scale, index, sample_size, effort, coverage)) %>% 
+  dplyr::select(-c(scale, index, sample_size, effort, gamma_coverage)) %>% 
   unnest(cols = beta_S_n) %>% 
   rename(beta_S_n = value) %>% 
-  dplyr::select(-c(scale, index, sample_size, effort, coverage)) %>% 
-  unnest(cols = beta_C) %>% 
-  dplyr::select(-c(data, wide_data)) %>% 
-  pivot_longer(cols = beta_C:beta_S_n, names_to = 'metric', 
+  dplyr::select(-c(scale, index, sample_size, effort, gamma_coverage)) %>% 
+  unnest(cols = beta_S_C) %>% 
+  rename(beta_S_C = value) %>% 
+  dplyr::select(-c(scale, index, sample_size, effort, gamma_coverage)) %>% 
+  pivot_longer(cols = beta_S_C:beta_S_n, names_to = 'metric', 
                values_to = 'value') %>% 
   mutate(metric = factor(metric, levels = c('beta_S', 'beta_S_PIE', 
-                                            'beta_S_n', 'beta_C'))) 
+                                            'beta_S_n', 'beta_S_C'))) 
 
 # summarise for figure
 temporal_beta_summary <- temporal_beta_resamps %>% 
@@ -105,7 +100,7 @@ temporal_beta_summary2 <- temporal_beta_resamps %>%
 temporal_beta_results <-
 ggplot() +
   geom_point(data = temporal_beta_summary2 %>% 
-               filter(metric %in% c('beta_S', 'beta_C')),
+               filter(metric %in% c('beta_S', 'beta_S_C')),
              aes(x = metric, y = location, colour = habitat, shape = habitat,
                  group = habitat),
              size = 1.5, alpha = 1,
@@ -117,11 +112,11 @@ ggplot() +
             nudge_x = 0.4, hjust = 0,
   ) +
   geom_linerange(data = temporal_beta_summary2 %>% 
-                   filter(metric %in% c('beta_S', 'beta_C')),
+                   filter(metric %in% c('beta_S', 'beta_S_C')),
                  aes(x = metric, ymin = Q5, ymax = Q95,
                      colour = habitat, group = habitat),
                  position = position_dodge(width = 0.25)) +
-  scale_x_discrete(limits = c('beta_S','beta_C'),#, 'beta_S_PIE'
+  scale_x_discrete(limits = c('beta_S','beta_S_C'),#, 'beta_S_PIE'
                    labels = c(expression(beta[S]), 
                               expression(beta[C])
                               # expression(beta[S[PIE]])
@@ -141,8 +136,7 @@ ggplot() +
                                'natural'),
                      # guide = 'none'
   )  +
-  labs(y = 'Metric value',
-       tag = 'ii.') +
+  labs(title = 'b)', y = 'Metric value') +
   theme_bw() +
   theme(legend.position = 'none',
         legend.direction = 'vertical',
@@ -153,7 +147,7 @@ ggplot() +
   guides(colour = guide_legend(reverse = TRUE, title = NULL),
          shape = guide_legend(reverse = TRUE, title = NULL))
 
-# ggsave('~/Dropbox/MoBD (Measurements of Beta diversity)/Beta_paper/figs/case-study-total-temporal-results.pdf',
+# ggsave('./figs/case-study-total-temporal-results.pdf',
 #        width = 100, height = 100, units = 'mm')
 
 # and the rarefaction visualisation
@@ -166,6 +160,14 @@ gamma_time <- rip2 %>%
   unnest(ibr) %>% 
   # still grouped, so
   mutate(N = 1:n())
+
+# all the alphas
+alpha_ibr_dat <- rip2 %>% 
+  mutate(ibr = map(data, ~mobr::rarefaction(.x$N, method = 'IBR'))) %>% 
+  unnest(ibr) %>% 
+  group_by(site_code, habitat, year, season) %>% 
+  mutate(N = 1:n())
+
 
 # need a target N for the comparison
 # focus on perennial habitat in spring
@@ -278,7 +280,7 @@ temporal_gamma_ibr <-
                      labels = c(0, 1000, '', 3000, '')) +
   labs(x = 'Number of individuals',
        y = 'Expected number of species',
-       tag = 'i.') +
+       title = 'a)') +
   theme_bw() +
   theme(legend.position = c(0.15,0.55),
         legend.justification = c(0,1),

@@ -72,17 +72,17 @@ sample4 <- sample_quadrats(panel4, n_quadrats = 4, plot = FALSE,
                            x0 = 0, y0 = 0, delta_x = 0.5, delta_y = 0.5)
 
 # calculate target coverage (use same target )
-ct1 = C_target(sample1$spec_dat, factor = 2)
-ct2 = C_target(sample2$spec_dat, factor = 2)
-ct3 = C_target(sample3$spec_dat, factor = 2)
-ct4 = C_target(sample4$spec_dat, factor = 2)
+ct1 = calc_C_target(sample1$spec_dat, factor = 2)
+ct2 = calc_C_target(sample2$spec_dat, factor = 2)
+ct3 = calc_C_target(sample3$spec_dat, factor = 2)
+ct4 = calc_C_target(sample4$spec_dat, factor = 2)
 
 ctarget = min(ct1, ct2, ct3, ct4)
 
-bC1 = beta_C(sample1$spec_dat, C = ctarget, extrapolation = TRUE)
-bC2 = beta_C(sample2$spec_dat, C = ctarget, extrapolation = TRUE)
-bC3 = beta_C(sample3$spec_dat, C = ctarget, extrapolation = TRUE)
-bC4 = beta_C(sample4$spec_dat, C = ctarget, extrapolation = TRUE)
+bC1 = calc_beta_div(sample1$spec_dat, 'S_C', C_target_gamma = ctarget)
+bC2 = calc_beta_div(sample2$spec_dat, 'S_C', C_target_gamma = ctarget)
+bC3 = calc_beta_div(sample3$spec_dat, 'S_C', C_target_gamma = ctarget)
+bC4 = calc_beta_div(sample4$spec_dat, 'S_C', C_target_gamma = ctarget)
 
 # also need target for beta_Sn
 Ntarget = min(rowSums(sample1$spec_dat), rowSums(sample2$spec_dat), 
@@ -90,27 +90,29 @@ Ntarget = min(rowSums(sample1$spec_dat), rowSums(sample2$spec_dat),
 # calculate betaS
 bS1 <- calc_comm_div(sample1$spec_dat,
               index = c('S', 'S_PIE', 'S_n'),
-              scales = 'beta', coverage = F, effort = Ntarget)
+              scales = 'beta', effort = Ntarget)
 bS2 <- calc_comm_div(sample2$spec_dat,
                      index = c('S', 'S_PIE', 'S_n'),
-                     scales = 'beta', coverage = F, effort = Ntarget)
+                     scales = 'beta', effort = Ntarget)
 bS3 <- calc_comm_div(sample3$spec_dat,
                      index = c('S', 'S_PIE', 'S_n'),
-                     scales = 'beta', coverage = F, effort = Ntarget)
+                     scales = 'beta', effort = Ntarget)
 
 bS4 <- calc_comm_div(sample4$spec_dat,
                      index = c('S', 'S_PIE', 'S_n'),
-                     scales = 'beta', coverage = F, effort = Ntarget)
+                     scales = 'beta', effort = Ntarget)
 
 panel1_map <- ggplot(panel1$census) +
   geom_point(aes(x = x , y = y, colour = species)) +
-  labs(subtitle = paste0('S =  ', S_pool, ', N = ', N_pool_big, '\nspatially random')) +
+  labs(subtitle = paste0('S =  ', S_pool, ', N = ', N_pool_big, '\nrandom')) +
   scale_x_continuous(breaks = c(0, 0.5, 1), expand = c(0,0)) +
   scale_y_continuous(breaks = c(0, 0.5, 1), expand = c(0,0)) +
   scale_color_viridis_d() +
   labs(tag = 'A') +
   theme_bw() +
   theme(legend.position = 'none',
+        text = element_text(size=20),
+        plot.subtitle = element_text(size=16),
         axis.text = element_blank(),
         axis.title = element_blank(),
         panel.grid.minor = element_blank(),
@@ -119,13 +121,15 @@ panel1_map <- ggplot(panel1$census) +
 
 panel2_map <- ggplot(panel2$census) +
   geom_point(aes(x = x , y = y, colour = species)) +
-  labs(subtitle = paste0('S =  ', S_pool, ', N = ', N_pool_small, '\nspatially random; lower N')) +
+  labs(subtitle = paste0('S =  ', S_pool, ', N = ', N_pool_small, '\nrandom; lower N')) +
   scale_x_continuous(breaks = c(0, 0.5, 1), expand = c(0,0)) +
   scale_y_continuous(breaks = c(0, 0.5, 1), expand = c(0,0)) +
   scale_color_viridis_d() +
   labs(tag = 'C') +
   theme_bw() +
   theme(legend.position = 'none',
+        text = element_text(size=20),
+        plot.subtitle = element_text(size=16),
         axis.text = element_blank(),
         axis.title = element_blank(),
         panel.grid.minor = element_blank(),
@@ -134,13 +138,15 @@ panel2_map <- ggplot(panel2$census) +
 
 panel3_map <- ggplot(panel3$census) +
   geom_point(aes(x = x , y = y, colour = species)) +
-  labs(subtitle = paste0('S =  ', S_pool, ', N = ', N_pool_big, '\nspatially clumped within species')) +
+  labs(subtitle = paste0('S =  ', S_pool, ', N = ', N_pool_big, '\nclumped within species')) +
   scale_x_continuous(breaks = c(0, 0.5, 1), expand = c(0,0)) +
   scale_y_continuous(breaks = c(0, 0.5, 1), expand = c(0,0)) +
   scale_color_viridis_d() +
   labs(tag = 'D') +
   theme_bw() +
   theme(legend.position = 'none',
+        text = element_text(size=20),
+        plot.subtitle = element_text(size=16),
         axis.text = element_blank(),
         axis.title = element_blank(),
         panel.grid.minor = element_blank(),
@@ -149,13 +155,15 @@ panel3_map <- ggplot(panel3$census) +
 
 panel4_map <- ggplot(panel4$census) +
   geom_point(aes(x = x , y = y, colour = species)) +
-  labs(subtitle = paste0('S =  ', S_pool, ', N = ', N_pool_big, '\nspatially random; less even SAD')) +
+  labs(subtitle = paste0('S =  ', S_pool, ', N = ', N_pool_big, '\nrandom; less even SAD')) +
   scale_x_continuous(breaks = c(0, 0.5, 1), expand = c(0,0)) +
   scale_y_continuous(breaks = c(0, 0.5, 1), expand = c(0,0)) +
   scale_color_viridis_d() +
   labs(tag = 'B') +
   theme_bw() +
   theme(legend.position = 'none',
+        text = element_text(size=20),
+        plot.subtitle = element_text(size=16),
         axis.text = element_blank(),
         axis.title = element_blank(),
         panel.grid.minor = element_blank(),
@@ -251,10 +259,11 @@ rare1 <- ggplot() +
   #          parse = T, size = 6) +
   labs(tag = 'E') +
   theme_classic() +
+  theme(text=element_text(size=20)) +
   theme(#axis.text = element_blank(),
         axis.title = element_blank(), 
-        axis.ticks = element_blank())
-
+        axis.ticks = element_blank(),
+        axis.text = element_text(size=13))
 
 rare2 <- ggplot() +
   geom_line(data = gamma_curve2,
@@ -269,9 +278,11 @@ rare2 <- ggplot() +
   #          parse = T, size = 6) +
   labs(tag = 'G') +
   theme_classic() +
+  theme(text=element_text(size=20)) +
   theme(#axis.text = element_blank(),
-        axis.title = element_blank(),
-        axis.ticks = element_blank())
+        axis.title = element_blank(), 
+        axis.ticks = element_blank(),
+        axis.text = element_text(size=13))
 
 
 rare3 <- ggplot() +
@@ -288,9 +299,11 @@ rare3 <- ggplot() +
   
   labs(tag = 'H') +
   theme_classic() +
+  theme(text=element_text(size=20)) +
   theme(#axis.text = element_blank(),
         axis.title = element_blank(),
-        axis.ticks = element_blank())
+        axis.ticks = element_blank(),
+        axis.text = element_text(size=13))
 
 
 rare4 <- ggplot() +
@@ -307,9 +320,11 @@ rare4 <- ggplot() +
   
   labs(tag = 'F') +
   theme_classic() +
+  theme(text=element_text(size=20)) +
   theme(#axis.text = element_blank(),
     axis.title = element_blank(),
-    axis.ticks = element_blank())
+    axis.ticks = element_blank(),
+    axis.text = element_text(size=13))
 
 # legend for linetype and colour 
 curve_legend = ggplot() +
@@ -332,10 +347,11 @@ curve_legend = ggplot() +
            label = paste('beta[W]==', round(bS3$value[[1]], digits = 1)),
            parse = T, size = 6) +
   annotate('text', x = 700, y = 25,
-           label = paste('beta[C]==', round(bC3[[1]], digits = 1)),
+           label = paste('beta[C]==', round(bC3$value[[1]], digits = 1)),
            parse = T, size = 6) +
   
   theme_classic() +
+  theme(text=element_text(size=18)) +
   theme(#axis.text = element_blank(),
     axis.title = element_blank(),
     axis.ticks = element_blank(),
@@ -347,63 +363,72 @@ curve_leg = gg_legend(curve_legend)
 inset1 <- ggplot() +
   geom_point(data = bind_rows(bS1 %>% 
                                 filter(index=='beta_S'), 
-                              tibble(index = 'beta_C', value = bC1[[1]])),
+                              bC1),
              aes(x = index, y = value)) +
-  scale_x_discrete(limits = c('beta_S',  'beta_C'), #'beta_S_PIE', 'beta_S_n',
+  scale_x_discrete(limits = c('beta_S', 'beta_S_C'),
                    labels = c(expression(beta[S]), expression(beta[C])), #expression(beta[S[PIE]]), expression(beta[S[n]]),
                    name = '') +
   scale_y_continuous(breaks= c(1, 1.1, 1.2, 1.3, 1.4),
                      labels = c(1, '', 1.2, '', 1.4),
                      limits = c(0.95, 1.4), name = '') +
   theme_minimal() +
+  theme(text=element_text(size=20)) +
   theme(panel.grid.minor = element_blank(), 
-        axis.text.x = element_text(size=15))
+        axis.text.x = element_text(size=18),
+        axis.text.y = element_text(size=16))
+        
 
 
 inset2 <- ggplot() +
   geom_point(data = bind_rows(bS2 %>% 
                                 filter(index=='beta_S'), 
-                              tibble(index = 'beta_C', value = bC2[[1]])),
+                              bC2),
              aes(x = index, y = value)) +
-  scale_x_discrete(limits = c('beta_S', 'beta_C'),
+  scale_x_discrete(limits = c('beta_S', 'beta_S_C'),
                    labels = c(expression(beta[S]), expression(beta[C])),
                    name = '') +
   scale_y_continuous(breaks= c(1, 1.1, 1.2, 1.3, 1.4),
                      labels = c(1, '', 1.2, '', 1.4),
                      limits = c(0.95, 1.4), name = '') +
   theme_minimal() +
+  theme(text=element_text(size=20)) +
   theme(panel.grid.minor = element_blank(), 
-        axis.text.x = element_text(size=15))
+        axis.text.x = element_text(size=18),
+        axis.text.y = element_text(size=16))
 
 inset3 <- ggplot() +
   geom_point(data = bind_rows(bS3 %>% 
                                 filter(index=='beta_S'), 
-                              tibble(index = 'beta_C', value = bC3[[1]])),
+                              bC3),
              aes(x = index, y = value)) +
-  scale_x_discrete(limits = c('beta_S', 'beta_C'),
+  scale_x_discrete(limits = c('beta_S', 'beta_S_C'),
                    labels = c(expression(beta[S]), expression(beta[C])),
                    name = '') +
   scale_y_continuous(breaks= c(1, 1.1, 1.2, 1.3, 1.4),
                      labels = c(1, '', 1.2, '', 1.4),
                      limits = c(0.95, 1.4), name = '') +
   theme_minimal() +
+  theme(text=element_text(size=20)) +
   theme(panel.grid.minor = element_blank(), 
-        axis.text.x = element_text(size=15))
+        axis.text.x = element_text(size=18),
+        axis.text.y = element_text(size=16))
 
 inset4 <- ggplot() +
   geom_point(data = bind_rows(bS4 %>% 
                                 filter(index=='beta_S'), 
-                              tibble(index = 'beta_C', value = bC4[[1]])),
+                              bC4),
              aes(x = index, y = value)) +
-  scale_x_discrete(limits = c('beta_S', 'beta_C'),
+  scale_x_discrete(limits = c('beta_S', 'beta_S_C'),
                    labels = c(expression(beta[S]), expression(beta[C])),
                    name = '') +
   scale_y_continuous(breaks= c(1, 1.1, 1.2, 1.3, 1.4),
                      labels = c(1, '', 1.2, '', 1.4),
                      limits = c(0.95, 1.4), name = '') +
   theme_minimal() +
+  theme(text=element_text(size=20)) +
   theme(panel.grid.minor = element_blank(), 
-        axis.text.x = element_text(size=15))
+        axis.text.x = element_text(size=18),
+        axis.text.y = element_text(size=16))
 
 all_curves <- plot_grid(curve_leg,
                         plot_grid(NULL, 
@@ -414,9 +439,9 @@ all_curves <- plot_grid(curve_leg,
                                   rel_widths = c(0.05, 1, 1, 1, 1),
                                   nrow = 1),
                         NULL,
-                        rel_heights = c(0.05, 1, 0.05), ncol = 1) +
-  draw_label(label = 'Number of individuals', y = 0.03, size = 13) +
-  draw_label(label = 'Species richness', x = 0.01, angle = 90, size = 13) 
+                        rel_heights = c(0.08, 1, 0.05), ncol = 1) +
+  draw_label(label = 'Number of individuals', y = 0.03, size = 18) +
+  draw_label(label = 'Species richness', x = 0.01, angle = 90, size = 18) 
 
 
 plot_grid(cowplot::plot_grid(panel1_map,
@@ -430,3 +455,7 @@ plot_grid(cowplot::plot_grid(panel1_map,
 
 ggsave('./figs/non-spatial-vs-spatial-beta-diversity.pdf',
         width = 293, height = 160, units = 'mm')
+
+# for making additional edits in powerpoint 
+ggsave('./figs/non-spatial-vs-spatial-beta-diversity.svg',
+       width = 293, height = 160, units = 'mm')

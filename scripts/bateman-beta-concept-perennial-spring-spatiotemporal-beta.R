@@ -1,3 +1,5 @@
+library(mobr)
+
 source('./scripts/bateman-beta-concept-perennial-spring-standardise-effort.R')
 
 # first total spatiotemporal variation in community composition
@@ -36,7 +38,7 @@ total_beta_jk$wide_data[[1]] %>% nrow()
 
 # calculate target coverage for standardisation
 total_targetC_resamps <- total_beta_jk %>% 
-  mutate(target_C = map(wide_data, ~mobr::C_target(x = .[,-c(1,2)], factor = 2))) %>% 
+  mutate(target_C = map(wide_data, ~mobr::calc_C_target(x = .[ , -c(1,2)], factor = 2))) %>% 
   unnest(target_C) %>% 
   ungroup() %>% 
   summarise(C_target = min(target_C))
@@ -52,40 +54,35 @@ total_targetN_resamps <- total_beta_jk %>%
   unique()
 
 total_beta_resamps_calcs <- total_beta_jk %>% 
-  mutate(beta_C = map(wide_data, possibly(~mobr::beta_C(x = .[,-c(1,2)], 
-                                                        C = total_targetC_resamps$C_target, 
-                                                        extrapolation = TRUE), 
+  mutate(beta_S_C = map(wide_data, possibly(~mobr::calc_beta_div(abund_mat = .[ , -c(1,2)],
+                                                              index = 'S_C', 
+                                                              C_target_gamma = total_targetC_resamps$C_target), 
                                           otherwise = NULL)),
-         beta_S = map(wide_data, ~mobr::calc_comm_div(abund_mat = .[,-c(1,2)], 
-                                                      index = 'S', 
-                                                      scales = 'beta', 
-                                                      coverage = FALSE)),
-         beta_S_PIE = map(wide_data, ~mobr::calc_comm_div(abund_mat = .[,-c(1,2)], 
-                                                          index = 'S_PIE', 
-                                                          scales = 'beta', 
-                                                          coverage = FALSE)),
-         beta_S_n = map(wide_data, ~mobr::calc_comm_div(abund_mat = .[,-c(1,2)], 
-                                                          index = 'S_n', 
-                                                          effort = total_targetN_resamps,
-                                                          scales = 'beta', 
-                                                          coverage = FALSE)))
+         beta_S = map(wide_data, ~mobr::calc_beta_div(abund_mat = .[ , -c(1,2)], 
+                                                      index = 'S')), 
+         beta_S_PIE = map(wide_data, ~mobr::calc_beta_div(abund_mat = .[,-c(1,2)], 
+                                                          index = 'S_PIE')), 
+         beta_S_n = map(wide_data, ~mobr::calc_beta_div(abund_mat = .[,-c(1,2)], 
+                                                        index = 'S_n', 
+                                                        effort = total_targetN_resamps)))
 
 total_beta_resamps <- total_beta_resamps_calcs %>% 
   unnest(cols = beta_S) %>% 
   rename(beta_S = value) %>% 
-  dplyr::select(-c(scale, index, sample_size, effort, coverage)) %>% 
+  dplyr::select(-c(scale, index, sample_size, effort, gamma_coverage)) %>% 
   unnest(cols = beta_S_PIE) %>% 
   rename(beta_S_PIE = value) %>% 
-  dplyr::select(-c(scale, index, sample_size, effort, coverage)) %>% 
+  dplyr::select(-c(scale, index, sample_size, effort, gamma_coverage)) %>% 
   unnest(cols = beta_S_n) %>% 
   rename(beta_S_n = value) %>% 
-  dplyr::select(-c(scale, index, sample_size, effort, coverage)) %>% 
-  unnest(cols = beta_C) %>% 
-  dplyr::select(-c(data, wide_data)) %>% 
-  pivot_longer(cols = beta_C:beta_S_n, names_to = 'metric', 
+  dplyr::select(-c(scale, index, sample_size, effort, gamma_coverage)) %>% 
+  unnest(cols = beta_S_C) %>% 
+  rename(beta_S_C = value) %>% 
+  dplyr::select(-c(scale, index, sample_size, effort, gamma_coverage)) %>% 
+  pivot_longer(cols = beta_S_C:beta_S_n, names_to = 'metric', 
                values_to = 'value') %>% 
   mutate(metric = factor(metric, levels = c('beta_S', 'beta_S_PIE', 
-                                          'beta_S_n', 'beta_C'))) 
+                                          'beta_S_n', 'beta_S_C'))) 
 
 # summarise for figure
 total_beta_summary <- total_beta_resamps %>% 
@@ -99,7 +96,7 @@ total_beta_summary <- total_beta_resamps %>%
 results_plot <-
 ggplot() +
   geom_point(data = total_beta_summary %>% 
-               filter(metric %in% c('beta_S', 'beta_C')),
+               filter(metric %in% c('beta_S', 'beta_S_C')),
              aes(x = metric, y = location, colour = habitat, shape = habitat,
                  group = habitat),
              size = 2, 
@@ -111,11 +108,11 @@ ggplot() +
              nudge_x = 0.2, hjust = 0, size = 3
               ) +
   geom_linerange(data = total_beta_summary %>% 
-                   filter(metric %in% c('beta_S', 'beta_C')),
+                   filter(metric %in% c('beta_S', 'beta_S_C')),
                  aes(x = metric, ymin = Q5, ymax = Q95,
                      colour = habitat, group = habitat),
                  position = position_dodge(width = 0.1)) +
-  scale_x_discrete(limits = c('beta_S', 'beta_C'),#, 'beta_S_PIE'
+  scale_x_discrete(limits = c('beta_S', 'beta_S_C'),#, 'beta_S_PIE'
                    labels = c(expression(beta[S]), 
                               expression(beta[C])
                               # expression(beta[S[PIE]])
@@ -136,7 +133,7 @@ ggplot() +
                      guide = 'none'
                      )  +
   labs(y = 'Metric value',
-       tag = 'ii.') +
+       title = 'b)') +
   theme_bw() +
   theme(legend.position = 'none',
         legend.direction = 'vertical',
@@ -237,7 +234,7 @@ ggplot() +
                       labels = c('engineered', 'natural'))  +
   labs(x = 'Number of individuals',
        y = 'Expected number of species',
-       tag = 'i.') +
+       title = 'a)') +
   theme_bw() +
   theme(legend.position = c(0.15,0.5),
         legend.justification = c(0,1),
@@ -256,6 +253,7 @@ panel_A <- cowplot::plot_grid(rarefaction_curves, results_plot,
                    nrow = 1,
                    rel_widths = c(1, 0.5), 
                    align = 'hv')
+panel_A
 ggsave('./figs/case-study-total-spatiotemporal-results.pdf',
        width = 150, height = 90, units = 'mm')
 

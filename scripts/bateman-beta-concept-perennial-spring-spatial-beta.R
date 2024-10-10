@@ -1,5 +1,5 @@
 ## temporal variation in spatial beta-diversity
-
+library(mobr)
 # get standardised data
 source('./scripts/bateman-beta-concept-perennial-spring-standardise-effort.R')
 
@@ -14,7 +14,7 @@ spatial_beta_calcs <- rip2 %>%
   ungroup()
 
 spatial_targetC <- spatial_beta_calcs %>% 
-  mutate(target_C = map(wide_data, ~mobr::C_target(x = .[,-c(1)], 
+  mutate(target_C = map(wide_data, ~mobr::calc_C_target(x = .[,-c(1)], 
                                                    factor = 2))) %>%
   unnest(target_C) %>% 
   ungroup() %>% 
@@ -33,41 +33,35 @@ spatial_targetN <- rip2 %>%
 
 
 spatial_beta_calcs <- spatial_beta_calcs %>% 
-  mutate(beta_C = map(wide_data, ~mobr::beta_C(x = .[,-c(1)], 
-                                               C = spatial_targetC$C_target, 
-                                               extrapolation = TRUE)),
-         beta_S = map(wide_data, ~mobr::calc_comm_div(abund_mat = .[,-c(1)], 
-                                                      index = 'S', 
-                                                      coverage = FALSE, 
-                                                      scales = 'beta')),
-         beta_S_PIE = map(wide_data, ~mobr::calc_comm_div(abund_mat = .[,-c(1)], 
-                                                          index = 'S_PIE', 
-                                                          coverage = FALSE, 
-                                                          scales = 'beta')),
-         beta_S_n = map(wide_data, ~mobr::calc_comm_div(abund_mat = .[,-c(1)], 
+  mutate(beta_S_C = map(wide_data, ~mobr::calc_beta_div(abund_mat = .[ , -1], index = 'S_C', 
+                                                      C_target_gamma = spatial_targetC$C_target)),
+         beta_S = map(wide_data, ~mobr::calc_beta_div(abund_mat = .[ , -1], 
+                                                      index = 'S')),
+         beta_S_PIE = map(wide_data, ~mobr::calc_beta_div(abund_mat = .[ , -1], 
+                                                          index = 'S_PIE')),
+         beta_S_n = map(wide_data, ~mobr::calc_beta_div(abund_mat = .[ , -1], 
                                                         index = 'S_n', 
-                                                        coverage = FALSE, 
-                                                        effort = spatial_targetN,
-                                                        scales = 'beta')))
+                                                        effort = spatial_targetN)))
 
 
 spatial_beta_dat <- spatial_beta_calcs %>% 
   unnest(cols = beta_S) %>% 
   rename(beta_S = value) %>% 
-  dplyr::select(-c(scale, index, sample_size, effort, coverage)) %>% 
+  dplyr::select(-c(scale, index, sample_size, effort, gamma_coverage)) %>% 
   unnest(cols = beta_S_PIE) %>% 
   rename(beta_S_PIE = value) %>% 
-  dplyr::select(-c(scale, index, sample_size, effort, coverage)) %>% 
+  dplyr::select(-c(scale, index, sample_size, effort, gamma_coverage)) %>% 
   unnest(cols = beta_S_n) %>% 
   rename(beta_S_n = value) %>% 
-  dplyr::select(-c(scale, index, sample_size, effort, coverage)) %>% 
-  unnest(cols = beta_C) %>% 
-  dplyr::select(-c(data, wide_data)) %>% 
-  pivot_longer(cols = beta_C:beta_S_n, names_to = 'index', 
+  dplyr::select(-c(scale, index, sample_size, effort, gamma_coverage)) %>% 
+  unnest(cols = beta_S_C) %>%
+  rename(beta_S_C = value) %>% 
+  dplyr::select(-c(scale, index, sample_size, effort, gamma_coverage)) %>% 
+  pivot_longer(cols = beta_S_C:beta_S_n, names_to = 'index', 
                values_to = 'value') %>% 
   mutate(index = factor(index, levels = c('beta_S',  
                                           'beta_S_n', 
-                                          'beta_C', 
+                                          'beta_S_C', 
                                           'beta_S_PIE'))) 
 
 spatial_beta_dat$index <- factor(spatial_beta_dat$index,

@@ -79,7 +79,7 @@ contr_beta_dat %>%
   ggplot() +
   # facet_grid(contrast~season) +
   stat_smooth(aes(x = year, y = value, colour = index, fill = index),
-              method = 'gam') +
+              method = 'lm') +
   geom_point(aes(x = year, y = value, colour = index)) +
   scale_colour_manual(values = c('beta[S]' = '#d01c8b',
                                  # 'beta[S[n]]' = '#b8e186',
